@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What payment methods do you offer?",
+    "ans": "We accept all major credit cards, PayPal, and (in select countries) direct debit. We also support transactions in a range of currencies."
+  },
+  {
+    "question": "How do I switch to a different plan?",
+    "ans": "You can switch to a new plan at any time by going to the Billing page in your account. Select the plan you’d like to switch to and immediately start using new features."
+  },
+  {
+    "question": "Can I buy credits instead?",
+    "ans": "Yes. If you send emails infrequently and prefer to pay as you go, you can buy email credits as an alternative to a monthly plan."
+  },
+  {
+    "question": "Do you have pricing for high-volume email senders?",
+    "ans": "We do indeed. If you have more than 200,000 contacts, we have a high-volume plan that can meet your needs."
+  },
+  {
+    "question": "What happens if I hit my contact or sending limit?",
+    "ans": " Mailchimp will automatically bill you for your overages. As long as you pay for your overages on time, we will not stop your campaigns or pause your account."
+  }
+]
