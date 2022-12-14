@@ -1,0 +1,18 @@
+.signleft{
+    /* border: 2px solid red; */
+   border-left: 1rem solid yellow;
+}
+
+.signright{
+    /* border: 2px solid red; */
+    background-color: yellow;
+position: relative;
+}
+
+.image{
+    width: 150%;
+height: 100vh;
+margin-top: 5rem;
+position: absolute;
+left: -20%;
+}
