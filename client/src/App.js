@@ -1,12 +1,15 @@
 
 import './App.css';
 import Checkout from './pages/Checkout/Checkout';
-
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <div >
-    <Checkout/>
+    <div className="App">
+      <Navbar/>
+       <Checkout/>
+      <Footer/>
     </div>
   );
 }
