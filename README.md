@@ -1,4 +1,4 @@
-# MailChimp
+# Emailomatic
 
 ## COllaborators
 
