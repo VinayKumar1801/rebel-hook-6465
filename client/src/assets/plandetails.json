@@ -1,0 +1,29 @@
+[
+  { "title": "Monthly Email Sends", "paid": "150,000", "free": "2500" },
+  { "title": "Users", "paid": "Unlimited", "free": "1 Seat" },
+  {
+    "title": "Customer Support",
+    "paid": "Phone & Priority Support",
+    "free": "Email support for first 30 days"
+  },
+  { "title": "Pre-built email templates", "paid": true, "free": true },
+  { "title": "300+ integrations", "paid": true, "free": true },
+  { "title": "Basic Reporting & Analytics", "paid": true, "free": true },
+  { "title": "Forms and Landing Pages", "paid": true, "free": true },
+  { "title": "Creative Assistant", "paid": true, "free": true },
+  { "title": "Role-based Access", "paid": "5 Roles", "free": false },
+  { "title": "Remove Mailchimp Branding", "paid": true, "free": false },
+  { "title": "A/B Testing", "paid": true, "free": false },
+  { "title": "Email Scheduling", "paid": true, "free": false },
+  { "title": "Automated Customer Journeys", "paid": "Enhanced", "free": false },
+  { "title": "Pre-built Journeys", "paid": true, "free": false },
+  { "title": "Custom-Coded Templates", "paid": true, "free": false },
+  { "title": "Predictive Segmentation", "paid": true, "free": false },
+  { "title": "Content Optimizer", "paid": true, "free": false },
+  { "title": "Send Time Optimization", "paid": true, "free": false },
+  { "title": "Dynamic Content", "paid": true, "free": false },
+  { "title": "Multivariate Testing", "paid": true, "free": false },
+  { "title": "Comparative Reporting", "paid": true, "free": false },
+  { "title": "Advanced Segmentation", "paid": true, "free": false },
+  { "title": "Assisted Onboarding", "paid": true, "free": false }
+]

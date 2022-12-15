@@ -1,0 +1,17 @@
+[
+  {
+    "variant": "Premium",
+    "desc": "Our most advanced tools, unlimited contacts, and priority support; built for teams.",
+    "starts_at": "23,000",
+    "conditions": "*Overages apply if contact or email send limit is exceeded. Learn more",
+    "button_text": "Buy Now"
+  },
+
+  {
+    "variant": "Free",
+    "desc": "Easily create email campaigns and learn more about your customers.",
+    "starts_at": "0",
+    "conditions": "*Sending will be paused if contact or email send limit is exceeded. Learn more",
+    "button_text": "Sign Up Free"
+  }
+]
