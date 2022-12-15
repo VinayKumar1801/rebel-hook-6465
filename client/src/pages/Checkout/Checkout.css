@@ -3,6 +3,19 @@
     margin: auto;
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    justify-content: space-around;
     gap: 10px;
     border: 1px solid red;
+    padding: 20px;
+}
+.paybuton{
+    width: 100%;
+    color: white;
+    background-color: #007c89;
+    height: 7vh;
+    margin-top: 2rem;
+    font-weight: 500;
+}
+.paybuton:hover{
+    background-color: #005963;
 }
