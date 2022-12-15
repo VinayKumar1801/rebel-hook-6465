@@ -5,7 +5,6 @@
     grid-template-columns: repeat(2,1fr);
     justify-content: space-around;
     gap: 10px;
-    border: 1px solid red;
     padding: 20px;
 }
 .paybuton{
@@ -18,4 +17,24 @@
 }
 .paybuton:hover{
     background-color: #005963;
+}
+.save-btn1{
+    width: 25%;
+    color: white;
+    background-color: #007c89;
+    height: 7vh;
+    margin-top: 2rem;
+    font-weight: 500;
+}
+.save-btn1:hover{
+    background-color: #005963;
+}
+.save-btn2{
+    width: 25%;
+    height: 7vh;
+    margin-top: 2rem;
+    font-weight: 500;
+}
+.save-btn2:hover{
+    background-color: #c1e8ed;
 }
