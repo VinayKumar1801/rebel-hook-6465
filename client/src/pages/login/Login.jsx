@@ -18,19 +18,17 @@ const Login = () => {
     <Grid
       className="bgimage"
       templateColumns={{
-        lg: "1.5fr 3fr",
-        md: "1.5fr 3fr",
-        sm: "1fr",
-        base: "1fr",
+        lg: "1fr 1fr",
+        md: "1fr 1fr",
       }}
       gap={6}
     >
-      <GridItem p={"20px"} className="signleft" w="100%">
+      <GridItem p={"20px"} className="signleft">
         <Image width={"30%"} mb="3rem" src={logo} />
         <Container>
           <Heading m={"5px 0"}>Log In</Heading>
           <Text m={"5px 0"}>
-            Need a Mailchimp account? <u>Create an account</u>
+            Need a Emailomatic account? <u>Create an account</u>
           </Text>
           <FormControl isRequired>
             <FormLabel  m={"10px 0"}>Email</FormLabel>
@@ -49,15 +47,12 @@ const Login = () => {
               <Text>Forgot username? · Forgot password?</Text>
               <Text>Can't Log In?</Text>
             </Container>
-            <Text fontSize={'xs'} textAlign='justify'>©2001–2022 All Rights Reserved. Mailchimp® is a registered trademark of The Rocket Science Group, LLC. Cookie Preferences, Privacy, and Terms.</Text>
+            <Text fontSize={'xs'} textAlign='justify'>©2001–2022 All Rights Reserved. Emailomatic® is a registered trademark of The Rocket Science Group, LLC. Cookie Preferences, Privacy, and Terms.</Text>
           </FormControl>
         </Container>
       </GridItem>
-      <GridItem className="signright" w="100%">
-        <Image
-          className="image"
-          src="https://cdn-images.mailchimp.com/billboards/phpza0iJx.jpeg"
-        />
+      <GridItem backgroundImage="url('https://cdn-images.mailchimp.com/billboards/phpza0iJx.jpeg')"   backgroundPosition="center"
+  backgroundRepeat="no-repeat" backgroundSize={"cover"} display={{lg:"block",md:"block",sm:"none",base:"none"}} >
       </GridItem>
     </Grid>
   );
