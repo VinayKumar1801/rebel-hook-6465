@@ -15,3 +15,6 @@
 - NodeJS
 - Express
 - MongoDB
+- Redux
+- JWS token
+- Redis
