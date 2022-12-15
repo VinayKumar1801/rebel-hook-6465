@@ -6,13 +6,11 @@
 .signright{
     /* border: 2px solid red; */
     background-color: yellow;
-position: relative;
+/* position: relative; */
 }
 
 .image{
-    width: 150%;
-height: 100vh;
-margin-top: 5rem;
-position: absolute;
-left: -20%;
+    display: block;
+    margin: auto;
+    
 }
