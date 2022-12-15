@@ -14,7 +14,7 @@ const Checkout = () => {
     return (
         <div className="main">
             {/* payment and addess page part */}
-            <Box w={"105%"} px={"30px"} border="1px solid black" height="1000px">
+            <Box w={"105%"} px={"30px"} height="900px">
                 <Text fontSize="2rem" mb={"15px"} fontWeight="400">Payment method</Text>
 
                 <hr />
@@ -52,11 +52,11 @@ const Checkout = () => {
                         <Flex>
                             <Box mt={"20px"}>
                                 <FormLabel>Expiration date</FormLabel>
-                                <Input borderColor={"black"} borderRadius="0px" size="lg" placeholder='MM/YY' />
+                                <Input borderColor={"black"} type="month" borderRadius="0px" size="lg" placeholder='MM/YY' />
                             </Box>
                             <Box ml={"20px"} mt={"20px"}>
                                 <FormLabel>Security code</FormLabel>
-                                <Input borderColor={"black"} borderRadius="0px" maxLength={"4"} size="lg" placeholder='123' />
+                                <Input borderColor={"black"} type="password" borderRadius="0px" maxLength={"4"} size="lg" placeholder='123' />
                             </Box>
 
 
@@ -107,14 +107,19 @@ const Checkout = () => {
                             <Input borderColor={"black"} borderRadius="0px" size={"lg"} mt="-10px" />
                         </InputGroup>
                     </Stack>
+                    <Flex>
+
+                        <button className="save-btn1">Save</button>
+                        <button className="save-btn2">Cancel</button>
+                    </Flex>
                 </Box>
 
             </Box>
             {/* Billing part paynow  */}
 
 
-            <Box ml={"7rem"} border="1px solid green" w="80%" bg={"#f6f6f4"}>
-                <Box m={"auto"} mt="30px" border="1px solid green" w={"80%"}>
+            <Box ml={"7rem"} w="80%" bg={"#f6f6f4"}>
+                <Box m={"auto"} mt="30px" w={"80%"}>
                     <Text fontWeight={"400"} fontSize={"2rem"}>Purchase summary</Text>
 
                     <Flex alignItems={"center"}>
@@ -147,6 +152,13 @@ const Checkout = () => {
 
 
                     <button className="paybuton"> Pay now </button>
+
+                    <Text fontSize={"12px"} mt="2rem" mb="2rem">By selecting “Pay now”, I understand that I am enrolling in a subscription plan and I authorize Mailchimp to charge my payment method each month at the then-current list price (plus applicable taxes) unless I cancel. I can cancel anytime by going to my Billing page in the Account Settings.</Text>
+                    <Text fontSize={"12px"}>*When you exceed your limit, you incur additional charges of $37.29/mo per additional 1,000 contacts (comes with additional 15,000 email sends).
+                        <Text fontSize="14px" color={"#138691"} >Learn More</Text> </Text>
+                    <Box mt="2rem">
+                        <Text fontSize={"12px"}>Your receipt will be sent to</Text>
+                    </Box>
 
                 </Box>
 
