@@ -38,3 +38,19 @@
 .save-btn2:hover{
     background-color: #c1e8ed;
 }
+@media only screen and (max-width: 800px) {
+    .main {
+     display: grid;
+     grid-template-columns: repeat(1,1fr);
+margin: auto;
+
+    }
+    
+  }
+ 
+  .edit_button{
+    color: #005963;
+    width: 2rem;
+    height: 7vh;
+    
+  }
