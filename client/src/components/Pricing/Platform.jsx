@@ -3,6 +3,8 @@ import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import PlanVariants from "./PlanVariants";
 import Features from "./Features";
 import Questions from "./Questions";
+import WebsitePlans from "./WebsitePlans";
+import WebsiteFeatures from "./WebsiteFeatures";
 
 export default function Platform() {
   return (
@@ -30,7 +32,10 @@ export default function Platform() {
               </Box>
             </TabPanel>
             <TabPanel>
-              <Box textAlign="center">Two</Box>
+              <Box>
+                <WebsitePlans />
+                <WebsiteFeatures />
+              </Box>
             </TabPanel>
             <TabPanel>
               <Box textAlign="center">Three</Box>

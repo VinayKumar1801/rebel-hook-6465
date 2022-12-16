@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Plus",
+    "desc": "All websites & commerce features and our lowest transaction fees for scaling businesses.",
+    "price": "2,413",
+    "fee": ".5%",
+    "btn_text": "Buy Now"
+  },
+  {
+    "title": "Core",
+    "desc": "Website customization, 24/7 support, and lower transaction fees for growing businesses.",
+    "price": "832",
+    "fee": "1.5%",
+    "btn_text": "Buy Now"
+  },
+  {
+    "title": "Free",
+    "desc": "Everything businesses need to build a website and launch a store.",
+    "price": "0",
+    "fee": "2%",
+    "btn_text": "Sign Up Free"
+  }
+]
