@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { BiRupee } from "react-icons/bi";
 import { Fragment } from "react";
-import plandata from "../../assets/website_plans.json";
+import plandata from "../../../assets/website_plans.json";
 
 export default function WebsitePlans() {
   return (

@@ -9,8 +9,9 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Fragment } from "react";
-import planImages from "../../assets/pricing_images.json";
-import Questions from "./Questions";
+import planImages from "../../../assets/pricing_images.json";
+import Questions from "../Marketing/Questions";
+
 export default function WebsiteFeatures() {
   return (
     <Fragment>
