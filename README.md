@@ -17,4 +17,3 @@
 - MongoDB
 - Redux
 - JWS token
-- Redis
