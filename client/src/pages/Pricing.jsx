@@ -1,9 +1,10 @@
+import { Box } from "@chakra-ui/react";
 import Platform from "../components/Pricing/Platform";
 
 export default function Pricing() {
   return (
-    <div>
+    <Box userSelect="none">
       <Platform />
-    </div>
+    </Box>
   );
 }
