@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import MarketingPlatform from "./Marketing/Marketing";
 import WebsiteCommerce from "./Website/WebsiteCommerce";
+import TransactionalEmail from "./TransactionalEmail/TransactionalEmail";
 
 export default function Platform() {
   return (
@@ -28,7 +29,7 @@ export default function Platform() {
               <WebsiteCommerce />
             </TabPanel>
             <TabPanel>
-              <Box textAlign="center">Three</Box>
+              <TransactionalEmail />
             </TabPanel>
           </TabPanels>
         </Tabs>
