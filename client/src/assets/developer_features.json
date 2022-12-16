@@ -1,0 +1,27 @@
+[
+  {
+    "image": "https://eep.io/images/yzco4xsimv0y/3MxBEW35Fa5LYlcQw8IcYl/609f3cddcbb33458b3d54fc75b16081a/ILLO_MiniSpot_Transactional-Infrastructure-600.png?w=160&fm=webp&q=80",
+    "title": "Global infrastructure",
+    "desc": "Benefit from automatic SPAM loop registration and pre-warmed dedicated IPs."
+  },
+  {
+    "image": "https://eep.io/images/yzco4xsimv0y/1aRGO6ynIJejUp1TJqYbfL/17ea7cefb6fd4efe00624cf98afd1d68/ILLO_MiniSpot_Transactional-Analytics-600.png?w=160&fm=webp&q=80",
+    "title": "Scalable analytics",
+    "desc": "Get transactional email analytics from your dashboard, export API or webhooks."
+  },
+  {
+    "image": "https://eep.io/images/yzco4xsimv0y/5B6FRQrsBrk4dNgsFsSxAP/6de75bc8344aba2415386936e2815117/ILLO_MiniSpot_Transactional-Sending_Receiving-600.png?w=160&fm=webp&q=80",
+    "title": "Email options",
+    "desc": "Customize sending and receiving for your transactional emails."
+  },
+  {
+    "image": "https://eep.io/images/yzco4xsimv0y/4GnQIgxwdWIQ6c8Keyi0yu/221916c61505ef11db14695619da5cb8/ILLO_Spot_Support_1_1080.png?w=160&fm=webp&q=80",
+    "title": "Developer guides",
+    "desc": "Get started with guides and a deep knowledge base."
+  },
+  {
+    "image": "https://eep.io/images/yzco4xsimv0y/76WKVx65xCora6N1GtnPii/8d846750ab775cc91a2305d44c3441cb/ILLO_Spot_Email_5_1080.png?w=160&fm=webp&q=80",
+    "title": "API reference",
+    "desc": "Use API documentation with all calls, parameters, and sample code."
+  }
+]
