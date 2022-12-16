@@ -21,9 +21,11 @@ import "./Signup.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { signupUser } from "../../redux/userSignup/userSignup.action";
-
+import {useNavigate} from "react-router-dom"
+import {Link} from "react-router-dom"
 const Signup = () => {
   const { isAuth, isError } = useSelector((store) => store.userSignup);
+  const navigate= useNavigate()
   const dispatch = useDispatch();
   // console.log(isAuth, token, isError, process.env.REACT_APP_MAIN_URL)
   const [form, setForm] = useState({
@@ -43,7 +45,12 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(signupUser(form));
+    dispatch(signupUser(form))
+    if(isAuth){
+      navigate('/login')
+    }
+    // .then(()=>(
+    // ))
   };
 
   return (
@@ -64,12 +71,14 @@ const Signup = () => {
           <Heading>Sign up for Emailomatic</Heading>
           <Text display={"inline-block"}>
             Create a free account or{" "}
-            <u color={"blue"} display={"inline-block"}>
+            <Link to='/login' style={{color:"blue"}}>
               log in
-            </u>
+            </Link>
           </Text>
 
-          <FormControl m={"30px 0"} isRequired>
+          <form onSubmit={handleSubmit}>
+          <FormControl m={"30px 0"} isRequired >
+
             <FormLabel m={"10px 0"}>Email</FormLabel>
             <Input onChange={handleChange} value={form.email} name="email" />
             <FormLabel m={"10px 0"}>Name</FormLabel>
@@ -98,7 +107,7 @@ const Signup = () => {
               // m={4}
               colorScheme="teal"
               type="submit"
-              onClick={handleSubmit}
+
             >
               Submit
             </Button>
@@ -106,6 +115,7 @@ const Signup = () => {
               Invisible reCAPTCHA by Google Privacy Policy and Terms of Use.
             </Text>
           </FormControl>
+          </form>
           <Text fontSize={"xs"} mt="2rem">
             ©2001–2022 All Rights Reserved. Emailomatic® is a registered
             trademark of The Rocket Science Group, LLC. Cookie Preferences,
@@ -131,7 +141,7 @@ const Signup = () => {
           <AlertIcon />
           <AlertTitle>Wrong Credentials</AlertTitle>
           <AlertDescription>
-            Please Add Correct Email And Password
+            Please Check Credentials
           </AlertDescription>
         </Alert>
       ) : (
