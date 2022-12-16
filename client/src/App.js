@@ -1,13 +1,13 @@
 
 
+import Routers from './allRoutes/Routes';
 import './App.css';
-import Login from './pages/login/Login';
-import Signup from './pages/signup/Signup';
+// import Dashboard from './pages/Dashboard/Dashboard';
+
 function App() {
   return (
     <div className="App">
-      {/* <Signup/> */}
-      <Login/>
+     <Routers/>
     </div>
   );
 }

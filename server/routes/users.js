@@ -39,26 +39,15 @@ const SECRETKEY= process.env.SECRETKEY
 // console.log(SECRETKEY)
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  redisClient.get(`login?email=${email}`, async (err, login) => {
-      if (err) console.log(err)
-      if (login) {
-          console.log(login)
-          return res.status(200).send({ message: "Login successfully", token: JSON.parse(login) })
-
-      } else {
+ 
           const user = await UserModel.findOne({ email });
           if (await argon2.verify(user.password, password)) {
               const token = JWT.sign({ id: user._id, name: user.name}, SECRETKEY, { expiresIn: "7 days" });
               const refreshToken = JWT.sign({ id: user._id, name: user.name }, REFRESHKEY, { expiresIn: "28 days" })
-              redisClient.setex(`login?email=${email}`, 3600, JSON.stringify(token))
-              console.log('miss')
-              // res.json(token)
-              return res.status(200).send({ message: "Login successfully", token, refreshToken })
+              return res.status(200).send({ message: "Login successfully", token, refreshToken,user:user.name })
           }
           return res.status(401).send("Invalid Credentials")
-      
-      }
-  })
+
 })
 
 router.post('/logout',(req,res)=>{
