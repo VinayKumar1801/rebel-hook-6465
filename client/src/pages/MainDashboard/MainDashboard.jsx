@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import SidebarWithHeader from '../../components/Sidebar/Sidebar'
 import {Navigate} from "react-router-dom"
 
-const Dashboard = () => {
+const MainDashboard = () => {
   const { isAuth } = useSelector((store) => store.userLogin);
     if(!isAuth){
         return <Navigate to ="/login"/>
@@ -15,4 +15,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default MainDashboard
