@@ -21,6 +21,7 @@ import { Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { userLogin } from "../../redux/userLogin/userLogin.action";
+import {Link} from "react-router-dom"
 
 const Login = () => {
   const { isAuth, isError } = useSelector((store) => store.userLogin);
@@ -30,8 +31,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   if (isAuth) {
-    return console.log("login ho gya")
-    // <Navigate to="/" />;
+    // return console.log("login ho gya")
+    return  <Navigate to="/home" />;
   }
 
   const handleSubmit = (e) => {
@@ -54,7 +55,7 @@ const Login = () => {
           <Container>
             <Heading m={"5px 0"}>Log In</Heading>
             <Text m={"5px 0"}>
-              Need a Emailomatic account? <u>Create an account</u>
+              Need a Emailomatic account? <Link to='/' style={{color:"blue"}}>Create an account</Link>
             </Text>
             <FormControl isRequired>
               <FormLabel m={"10px 0"}>Email</FormLabel>

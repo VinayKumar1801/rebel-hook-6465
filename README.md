@@ -16,5 +16,5 @@
 - Express
 - MongoDB
 - Redux
-- JWS token
-- Redis
+- JWT token
+
