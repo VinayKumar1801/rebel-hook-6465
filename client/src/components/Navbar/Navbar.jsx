@@ -33,8 +33,7 @@ import {Link as Linking} from "react-router-dom"
 
 
 export default function Navbar() {
-  const { isOpen } = useDisclosure();
-
+  const { isOpen, onToggle } = useDisclosure();
   return (
     <Box>
       <Flex
@@ -75,7 +74,7 @@ export default function Navbar() {
           </Flex>
         {/* </Flex> */}
         
-        {/* <Text
+         <Text
         // border="1px solid"
         textAlign="left"
         w="43%"
