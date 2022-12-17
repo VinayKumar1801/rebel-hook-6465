@@ -2,7 +2,7 @@ import {
   Box,
   Flex,
   Text,
-//   IconButton,
+  IconButton,
   Button,
   Stack,
   Collapse,
@@ -14,13 +14,18 @@ import {
   useColorModeValue,
   // useBreakpointValue,
   useDisclosure,
+  Image,
 } from "@chakra-ui/react";
-//   import {
-//     HamburgerIcon,
-//     CloseIcon,
-//     ChevronDownIcon,
-//     ChevronRightIcon,
-//   } from '@chakra-ui/icons';
+import {RxHamburgerMenu} from "react-icons/rx";
+import {GrClose} from "react-icons/gr";
+
+  // import {
+  //   HamburgerIcon,
+  //   CloseIcon,
+  //   ChevronDownIcon,
+  //   ChevronRightIcon,
+  // } from '@chakra-ui/icons';
+  import logo from "../../assets/logo.png"
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -37,33 +42,33 @@ export default function Navbar() {
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
+        justifyContent="space-between"
       >
-        {/* <Flex
+         {/* <Flex
           flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
           display={{ base: "flex", md: "none" }}
-        > */}
-          {/* <IconButton
+        >  */}
+          <IconButton
+          display={{ base: "flex", md: "none" }}
               onClick={onToggle}
               icon={
-                isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                isOpen ? <GrClose w={3} h={3} /> : <RxHamburgerMenu w={5} h={5} />
               }
               variant={'ghost'}
               aria-label={'Toggle Navigation'}
-            /> */}
+            />
         {/* </Flex> */}
-        <Flex flex={{ base: 1 }} 
-        // justify="space-evenly"
-        justify={{ base: "center", md: "start" }}
-        >
-         
 
+        {/* <Flex flex={{ base: 1 }} 
+        justify={{ base: "center", md: "start" }}
+        > */}
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
-        </Flex>
+        {/* </Flex> */}
         
-        <Text
+        {/* <Text
         // border="1px solid"
         textAlign="left"
         w="43%"
@@ -74,28 +79,24 @@ export default function Navbar() {
             color={useColorModeValue("gray.800", "white")}
           >
           Emailomatic.com
-          </Text>
+          </Text> */}
+          <Image src={logo} maxH="70px"></Image>
 
         <Stack
           flex={{ base: 1, md: 0 }}
           justify={"flex-end"}
           direction={"row"}
-          spacing={6}
+          spacing={4}
         >
           <Button
             //   as={'a'}
             border="1px solid"
             borderRadius="50px"
-            //   fontSize={'sm'}
-            //   color={'black'}
-            //   fontWeight={400}
-            //   variant={'link'}
-            // display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
             color={"black"}
-            //   bg={'yellow'}
             href={"#"}
+            display={{base:"none",sm:"flex",md:"",lg:""}}
           >
             Login
           </Button>
@@ -108,9 +109,6 @@ export default function Navbar() {
             color={"black"}
             bg={"yellow"}
             href={"#"}
-            //   _hover={{
-            //     bg: 'pink.300',
-            //   }}
           >
             Sign Up
           </Button>
