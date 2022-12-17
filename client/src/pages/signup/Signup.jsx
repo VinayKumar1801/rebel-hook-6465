@@ -46,13 +46,15 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(signupUser(form))
-    if(isAuth){
-      navigate('/login')
-    }
+    
+  
     // .then(()=>(
     // ))
   };
+  if(isAuth){
+    navigate('/login')
 
+  }
   return (
     <>
     <Grid
