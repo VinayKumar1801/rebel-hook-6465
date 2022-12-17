@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Canva ",
+    "image": "https://eep.io/images/yzco4xsimv0y/egMxvwdsj41K5eESLhWBO/cf823adbd311e33919f97ffc5bf3181d/Canva.jpg?w=196&fm=webp&q=80",
+    "desc": "Create compelling visuals for your marketing."
+  },
+  {
+    "title": "Emailomatic for Salesforce",
+    "image": "https://eep.io/images/yzco4xsimv0y/51oq4AakIqo8fATlHgqHK0/02a750b1c1a16745296dca6fa7cb830c/Salesforce__1_.jpg?w=196&fm=webp&q=80",
+    "desc": "Sync your Mailchimp subscribers and Salesforce® leads across platforms."
+  },
+  {
+    "title": "Instagram",
+    "image": "https://eep.io/images/yzco4xsimv0y/67trWJLKtKcvrqlKYSlskE/696ad499e0cc60aa7392521a6a7cfd90/Instagram__1_.jpg?w=196&fm=webp&q=80",
+    "desc": "Promote and share your Instagram posts in email campaigns."
+  },
+  {
+    "title": "Shopify",
+    "image": "https://eep.io/images/yzco4xsimv0y/44dW9Z4hibyDYi0qggfets/b01884985e996ffb5dc133556b92bb7a/Shopify__1_.jpg?w=196&fm=webp&q=80",
+    "desc": "Sync Shopify customers,products, and purchase Data to Emailomatic"
+  },
+  {
+    "title": "Google Analytics",
+    "image": "https://eep.io/images/yzco4xsimv0y/7mpZ7UZrdzk2BmWX1OnRvb/5e610ecd21eeb25d0b82b098ce424e34/Google_Analytics2.jpg?w=196&fm=webp&q=80",
+    "desc": "Unlock powerful insights with campagin, website, or landing page data."
+  },
+  {
+    "title": "WooCommerce",
+    "image": "https://eep.io/images/yzco4xsimv0y/2uruOq31Y1FKdghFWn5zMg/8a35f3f9e463ba34038f3c3f16ccb635/WooCommerce.jpg?w=196&fm=webp&q=80",
+    "desc": "Power yoyr ecommerces store with smart marketing features."
+  },
+  {
+    "title": "QuickkBooks online",
+    "image": "https://eep.io/images/yzco4xsimv0y/uZVnrVt3DO1G4Ec5G4pvs/e6c9d3c2613827f7dd238f1c5e0b02d9/Quickbooks.jpg?w=196&fm=webp&q=80",
+    "desc": "Bring together yhour marketing tools and invoice data."
+  },
+  {
+    "title": "Squarespace Commerce",
+    "image": "https://eep.io/images/yzco4xsimv0y/2klSrOoLZKmLuGKZjKT9o3/ca400f60c2f3673f3ab9b52f4d03360d/Squarespace.jpg?w=196&fm=webp&q=80",
+    "desc": "Market your ecommerce business and drive sales."
+  },
+  {
+    "title": "Zapier",
+    "image": "https://eep.io/images/yzco4xsimv0y/26deBkGp3A5Pj7suZ9oV7V/858e8a4603707166988a3282bca7e29b/Zapier.jpg?w=196&fm=webp&q=80",
+    "desc": "Automatically pass data between web services without a single line of code."
+  }
+]

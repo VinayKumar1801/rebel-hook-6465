@@ -9,7 +9,7 @@ import {
   Tr,
 } from "@chakra-ui/react";
 import { Fragment } from "react";
-import details from "../../assets/plandetails.json";
+import details from "../../../assets/plandetails.json";
 import { TiTick } from "react-icons/ti";
 import { RxCross1 } from "react-icons/rx";
 

@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
-import PlanVariants from "./PlanVariants";
-import Features from "./Features";
-import Questions from "./Questions";
+import MarketingPlatform from "./Marketing/Marketing";
+import WebsiteCommerce from "./Website/WebsiteCommerce";
+import TransactionalEmail from "./TransactionalEmail/TransactionalEmail";
 
 export default function Platform() {
   return (
@@ -23,17 +23,13 @@ export default function Platform() {
           </TabList>
           <TabPanels>
             <TabPanel>
-              <Box>
-                <PlanVariants />
-                <Features />
-                <Questions />
-              </Box>
+              <MarketingPlatform />
             </TabPanel>
             <TabPanel>
-              <Box textAlign="center">Two</Box>
+              <WebsiteCommerce />
             </TabPanel>
             <TabPanel>
-              <Box textAlign="center">Three</Box>
+              <TransactionalEmail />
             </TabPanel>
           </TabPanels>
         </Tabs>

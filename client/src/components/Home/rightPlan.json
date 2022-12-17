@@ -1,0 +1,54 @@
+[
+  {
+    "title": "Premium",
+    "desc": "Our most advanced tools, unlimited contacts, and priority support; built for teams.",
+    "p1": "Starts at",
+    "p2": "₹23,000",
+    "p3": "/month based on 10,000 contacts*",
+    "1": "Phone & Priority Support",
+    "2": "Custom-Coded and Pre-built Email Templates",
+    "3": "Multivariate and A/B Testing",
+    "4": "Enhanced Automated Customer Journeys",
+    "5": "Predictive Segmentation",
+    "6": "Assisted Onboarding"
+  },
+  {
+    "title": "Standard",
+    "desc": "Sell even more with personalization, optimization tools, and enhanced automations.",
+    "p1": "Starts at",
+    "p2": "₹1,150",
+    "p3": "/month based on 500 contacts*",
+    "1": "24/7 Email & Chat Support",
+    "2": "Custom-Coded and Pre-built Email Templates",
+    "3": "A/B Testing",
+    "4": "Enhanced Automated Customer Journeys",
+    "5": "Predictive Segmentation",
+    "6": "Assisted Onboarding"
+  },
+  {
+    "title": "Essentials",
+    "desc": "Send the right content at the right time with testing and scheduling features.",
+    "p1": "Starts at",
+    "p2": "₹770",
+    "p3": "/month based on 500 contacts*",
+    "1": "24/7 Email & Chat Support",
+    "2": "Pre-built Email Templates",
+    "3": "A/B Testing",
+    "4": "Basic Automated Customer Journeys",
+    "5": "Predictive Segmentation",
+    "6": "Assisted Onboarding"
+  },
+  {
+    "title": "Free",
+    "desc": "Easily create email campaigns and learn more about your customers.",
+    "p1": "Starts at",
+    "p2": "₹0",
+    "p3": "/month based on 500 contacts*",
+    "1": "Email support for first 30 days",
+    "2": "Pre-built Email Templates",
+    "3": "A/B Testing",
+    "4": "Basic Automated Customer Journeys",
+    "5": "Predictive Segmentation",
+    "6": "Assisted Onboarding"
+  }
+]

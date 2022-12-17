@@ -1,0 +1,32 @@
+[
+  {
+    "block": "1 to 20 blocks",
+    "email": "1 to 500k emails",
+    "price": "$20/block"
+  },
+  {
+    "block": "21 to 40 blocks",
+    "email": "500k to 1M emails",
+    "price": "$18/block"
+  },
+  {
+    "block": "41 to 80 blocks",
+    "email": "1M to 2M emails",
+    "price": "$16/block"
+  },
+  {
+    "block": "81 to 120 blocks",
+    "email": "2M to 3M emails",
+    "price": "$14/block"
+  },
+  {
+    "block": "121 to 160 blocks",
+    "email": "3M to 4M emails",
+    "price": "$12/block"
+  },
+  {
+    "block": "161+ blocks",
+    "email": "4M+ emails",
+    "price": "$10/block"
+  }
+]

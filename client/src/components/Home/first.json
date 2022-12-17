@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Convert with Automations",
+    "image": "https://eep.io/images/yzco4xsimv0y/33f3mgIWbzKjIpIRJi2f5v/6bd36bba38b7f6a94d587605ab9a7d75/Desktop_Feature_Cards_1_Automations.jpeg?w=630&fm=webp&q=80",
+    "desc": "Send the right message at the right time to convert more customers.",
+    "bg": "#d99536"
+  },
+  {
+    "title": "Optimise with AI & Analytics",
+    "image": "https://eep.io/images/yzco4xsimv0y/hBcOt3RZ5DOhMJD2Hi2Z2/96b28d17c45e9376731ad825b002b0ff/Desktop_Feature_Cards_2_Analytics.png?w=630&fm=webp&q=80",
+    "desc": "Get AI-assisted suggestions to help make your content more engaging.",
+    "bg": "#e7b75f"
+  },
+  {
+    "title": "Target with Segmentation",
+    "image": "https://eep.io/images/yzco4xsimv0y/5xqzo6y8Z7anw9VQXJarpj/5f91182af7bf16ecc34b487a619d0a54/Desktop_Feature_Cards_3_Segmentation.jpeg?w=630&fm=webp&q=80",
+    "desc": "Boost customer loyalty by predicting the right ones to target.",
+    "bg": "#fdf8ea"
+  },
+  {
+    "title": "Sync with Integration",
+    "image": "https://eep.io/images/yzco4xsimv0y/lsHRpmOI81ZcFS1Yld0Bs/1e2812587cd0f3089061bd4b513fd6d0/Desktop_Feature_Cards_4_Integrations.png?w=630&fm=webp&q=80",
+    "desc": "Connect more tools, get more data, save time, and make better decisions.",
+    "bg": "#ffffff"
+  }
+]

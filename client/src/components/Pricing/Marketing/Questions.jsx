@@ -8,7 +8,7 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import { Fragment } from "react";
-import questionData from "../../assets/faqs.json";
+import questionData from "../../../assets/faqs.json";
 
 export default function Questions() {
   return (

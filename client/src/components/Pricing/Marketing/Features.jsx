@@ -1,6 +1,6 @@
 import { Box, Button, Stack, Text } from "@chakra-ui/react";
 import { Fragment } from "react";
-import features from "../../assets/pricing_features.json";
+import features from "../../../assets/pricing_features.json";
 
 export default function Features() {
   return (
