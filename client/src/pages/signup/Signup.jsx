@@ -69,7 +69,9 @@ const Signup = () => {
     >
       <GridItem className="signleft" w="100%">
         <Container p={"2rem"}>
-          <Image display={"block"} margin="auto" width={"50%"} src={logo} />
+        <Link to='/'>
+            <Image display={"block"} margin="auto" width={"50%"} src={logo} />
+          </Link>
           <Heading>Sign up for Emailomatic</Heading>
           <Text display={"inline-block"}>
             Create a free account or{" "}

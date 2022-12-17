@@ -1,13 +1,11 @@
 import {
-    Box, Text, Image, Grid, Flex, Button, Option, InputGroup, InputRightElement, Form, Input, Radio, RadioGroup, Checkbox, HStack, FormControl,
-    FormLabel,
-    FormErrorMessage,
-    FormHelperText, Stack, Container, Select
+    Box, Text, Image, Flex, Button,  InputGroup, InputRightElement,  Input, Radio, RadioGroup, Checkbox, HStack, FormControl,
+    FormLabel, Stack, Select
 } from "@chakra-ui/react";
 import { useState } from "react";
 
 import "./Checkout.css"
-
+import {Link} from "react-router-dom"
 
 
 
@@ -322,7 +320,9 @@ const Checkout = () => {
 
 
 
+                   <Link to='/dashboard'>
                     <button onClick={paynow} className="paybuton"> Pay now </button>
+                    </Link> 
 
                     <Text fontSize={"12px"} mt="2rem" mb="2rem">By selecting “Pay now”, I understand that I am enrolling in a subscription plan and I authorize Mailchimp to charge my payment method each month at the then-current list price (plus applicable taxes) unless I cancel. I can cancel anytime by going to my Billing page in the Account Settings.</Text>
                     <Text fontSize={"12px"}>*When you exceed your limit, you incur additional charges of $37.29/mo per additional 1,000 contacts (comes with additional 15,000 email sends).

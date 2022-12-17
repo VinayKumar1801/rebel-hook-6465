@@ -19,7 +19,7 @@ import { useState } from "react";
 import { Fragment } from "react";
 import plans from "../../../assets/plans.json";
 import PlanDetails from "./PlanDetails";
-
+import {Link} from "react-router-dom"
 const contactList = [500, 1500, 2500, 5000, 10000, 50000, 100000];
 
 export default function PlanVariants() {
@@ -101,7 +101,7 @@ export default function PlanVariants() {
                     </HStack>
                     <Box py="2">/month*</Box>
                     <Box py="4">
-                      <Button
+                     <Link to={el.to}> <Button
                         variant="solid"
                         colorScheme="yellow"
                         px={{ base: "4", lg: "10" }}
@@ -114,6 +114,7 @@ export default function PlanVariants() {
                       >
                         {el.button_text}
                       </Button>
+                      </Link>
                     </Box>
                     <Show above="lg">
                       <Text py="4">{el.conditions}</Text>
