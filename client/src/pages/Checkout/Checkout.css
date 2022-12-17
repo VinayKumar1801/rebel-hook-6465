@@ -38,7 +38,7 @@
 .save-btn2:hover{
     background-color: #c1e8ed;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
     .main {
      display: grid;
      grid-template-columns: repeat(1,1fr);
@@ -53,4 +53,17 @@ margin: auto;
     width: 2rem;
     height: 7vh;
     
+  }
+  .paypal{
+    width: 25%;
+    color: white;
+    background-color: #007c89;
+    height: 7vh;
+    margin-top: 2rem;
+    font-weight: 500;
+    font-size: 14px;
+   
+  }
+  .paypal:hover{
+    background-color: #005963;
   }

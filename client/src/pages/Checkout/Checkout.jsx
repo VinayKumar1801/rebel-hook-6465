@@ -15,26 +15,28 @@ const Checkout = () => {
 
     const [show, SetShow] = useState(1)
     const [showT, SetShowT] = useState(1)
-    const [div , Setdiv] = useState(1);
+    const [div, Setdiv] = useState(1);
+    const [item, Setitem] = useState(1);
 
-    const hadlediv=(e)=>{
+
+    const hadlediv = (e) => {
         Setdiv(e)
     }
 
-    const handletax=(e)=>{
+    const handletax = (e) => {
         SetShowT(e);
     }
 
-    const handleclick=(e)=>{
+    const handleclick = (e) => {
         SetShow(e);
-        localStorage.setItem("user",JSON.stringify(user));
+        
     }
 
     const [Tax, SetTax] = useState({
         tax: ""
     })
- const [em, Setem] = useState({b_email: ""})
- const {b_email}= em;
+    const [em, Setem] = useState({ b_email: "" })
+    const { b_email } = em;
 
     const [user, setUser] = useState({
         ad_name: "",
@@ -48,22 +50,33 @@ const Checkout = () => {
 
     })
 
-    const { ad_name,ad_lname,ad_add,ad_apt,ad_City,ad_country,ad_State,ad_code} = user;
-const {tax} = Tax;
+    const { ad_name, ad_lname, ad_add, ad_apt, ad_City, ad_country, ad_State, ad_code } = user;
+    const { tax } = Tax;
 
     const onInputChange = e => {
         setUser({ ...user, [e.target.name]: e.target.value });
-        SetTax({...Tax , [e.target.name]: e.target.value});
-        Setem({...em , [e.target.name] : e.target.value});
+        SetTax({ ...Tax, [e.target.name]: e.target.value });
+        Setem({ ...em, [e.target.name]: e.target.value });
     };
 
 
-const handleEdit=()=>{
-SetShow(1)
-}
-const handleEditt=()=>{
-    SetShowT(1)
-}
+    const handleEdit = () => {
+        SetShow(1)
+    }
+    const handleEditt = () => {
+        SetShowT(1)
+    }
+
+
+    //  multiply
+
+    const price = (23000);
+    const taxex = Math.floor(price * 18 / 100);
+    const payble = price + taxex;
+
+    const paynow = () => {
+        alert("Payment Successfull !!")
+    }
 
     return (
         <div className="main">
@@ -81,15 +94,18 @@ const handleEditt=()=>{
                         <RadioGroup defaultValue='Itachi'>
                             <HStack spacing='24px'>
 
-                                <Radio value='Itachi'>
-                                    <Box display={"Flex"} size="md" >
+                                <Radio onClick={() => Setitem(1)} value='Itachi'>
+                                    <Box onClick={() => Setitem(1)} display={"Flex"} size="md" >
                                         <Image src="https://us21.admin.mailchimp.com/release/e/assets/mastercard-UXCUKVYI.svg" />
                                         <Image src="https://us21.admin.mailchimp.com/release/e/assets/visa-DAJZHNYL.svg" />
                                         <Image src="https://us21.admin.mailchimp.com/release/e/assets/american-express-F3NWOJZT.svg" />
                                         <Image src="https://us21.admin.mailchimp.com/release/e/assets/discover-RLC2EY7Q.svg" /></Box>
                                 </Radio>
-                                <Radio value='Sage of the six Paths'>
-                                    <Image src="https://us21.admin.mailchimp.com/release/e/assets/paypal-MDZ4JKZB.svg" />
+                                <Radio onClick={() => Setitem(2)} value='Sage of the six Paths'>
+                                    <Box onClick={() => Setitem(2)} >
+
+                                        <Image src="https://us21.admin.mailchimp.com/release/e/assets/paypal-MDZ4JKZB.svg" />
+                                    </Box>
                                 </Radio>
                             </HStack>
                         </RadioGroup>
@@ -99,25 +115,44 @@ const handleEditt=()=>{
                 </Box>
                 {/* payment part input  */}
 
-                <Box mt={"20px"} w="80%">
-                    <FormControl isRequired>
-                        <FormLabel>Card number</FormLabel>
-                        <Input borderColor={"black"} borderRadius="0px" maxLength="16" size={"lg"} placeholder='' />
-                        <Flex>
-                            <Box mt={"20px"}>
-                                <FormLabel>Expiration date</FormLabel>
-                                <Input borderColor={"black"} borderRadius="0px" size="lg" placeholder='MM/YY' />
+                <Box>
+                    {
+                        item === 1 ? <div>
+
+                            <Box mt={"20px"} w="80%">
+                                <FormControl isRequired>
+                                    <FormLabel>Card number</FormLabel>
+                                    <Input borderColor={"black"} borderRadius="0px" maxLength="16" size={"lg"} placeholder='' />
+                                    <Flex>
+                                        <Box mt={"20px"}>
+                                            <FormLabel>Expiration date</FormLabel>
+                                            <Input borderColor={"black"} borderRadius="0px" size="lg" placeholder='MM/YY' />
+                                        </Box>
+                                        <Box ml={"20px"} mt={"20px"}>
+                                            <FormLabel>Security code</FormLabel>
+                                            <Input borderColor={"black"} type="password" borderRadius="0px" maxLength={"4"} size="lg" placeholder='123' />
+                                        </Box>
+
+
+
+                                    </Flex>
+
+                                </FormControl>
                             </Box>
-                            <Box ml={"20px"} mt={"20px"}>
-                                <FormLabel>Security code</FormLabel>
-                                <Input borderColor={"black"} type="password" borderRadius="0px" maxLength={"4"} size="lg" placeholder='123' />
+
+                        </div> : <div>
+
+                            <Box mt={"1rem"}>
+                                <Flex>
+                                    <Image w={"5rem"} src="https://us21.admin.mailchimp.com/release/e/assets/paypal-MDZ4JKZB.svg" />
+                                    <Text> _PayPal balance, eCheck, credit, and more</Text>
+                                </Flex>
+                                <button className="paypal">Connect to PayPal</button>
                             </Box>
 
 
-
-                        </Flex>
-
-                    </FormControl>
+                        </div>
+                    }
                 </Box>
 
                 {/* contact address part  */}
@@ -127,71 +162,71 @@ const handleEditt=()=>{
 
                     <hr />
 
-<Box>
-    {
-        show===1 ? <div>
-           
- <FormControl isRequired >
-                       
-                        <Flex>
-                            <Box mt={"20px"}>
-                                <FormLabel>First Name</FormLabel>
-                                <Input value={ad_name} name="ad_name"  onChange={e => onInputChange(e)} borderColor={"black"} borderRadius="0px" size="lg"  />
-                            </Box>
-                            <Box ml={"20px"} mt={"20px"}>
-                                <FormLabel>Last Name</FormLabel>
-                                <Input value={ad_lname} name="ad_lname"  onChange={e => onInputChange(e)} borderColor={"black"} borderRadius="0px"  size="lg"  />
-                            </Box>
-                        </Flex>
-                    <br />
-                         <FormLabel>Address</FormLabel>
-                        <Input value={ad_add} name="ad_add"  onChange={e => onInputChange(e)} w={"90%"} borderColor={"black"} borderRadius="0px"  size={"lg"}  />
-   <Flex>
-                            <Box mt={"20px"}>
-                                <FormLabel>Apt, unit, suite (optional)</FormLabel>
-                                <Input value={ad_apt} name="ad_apt"  onChange={e => onInputChange(e)} borderColor={"black"} borderRadius="0px" size="lg"  />
-                            </Box>
-                            <Box ml={"20px"} mt={"20px"}>
-                                <FormLabel>City</FormLabel>
-                                <Input value={ad_City} name="ad_City"  onChange={e => onInputChange(e)} borderColor={"black"} type="text" borderRadius="0px"  size="lg"  />
-                            </Box>
-                        </Flex>
-                         <Flex w="90%">
-                            <Box mt={"20px"}>
-                                <FormLabel>Country</FormLabel>
-                                <Input value={ad_country} name="ad_country"  onChange={e => onInputChange(e)} borderColor={"black"} borderRadius="0px" size="lg"  />
-                            </Box>
-                            <Box ml={"20px"} mt={"20px"}>
-                                <FormLabel>State</FormLabel>
-                                <Input value={ad_State} name="ad_State"  onChange={e => onInputChange(e)} borderColor={"black"} type="text" borderRadius="0px" size="lg"  />
-                            </Box>
-                             <Box ml={"20px"} mt={"20px"}>
-                                <FormLabel>Postal code</FormLabel>
-                                <Input value={ad_code} name="ad_code"  onChange={e => onInputChange(e)} borderColor={"black"} type="Number" borderRadius="0px" maxLength={"5"} size="lg"  />
-                            </Box>
-                        </Flex>
-                    </FormControl>
-                    <button onClick={()=>handleclick(2)} className="save-btn1">Save</button>
-                    <button className="save-btn2">Cancel</button>
-                    
-        </div>: <div>
-<Box>
-    <Flex  w="100%" justifyContent="space-between" >
-        <Box mt={"10px"}>
-         <Text>{ad_name} {ad_lname}</Text>
-    <Text>{ad_add} {ad_apt}</Text>
-    <Text>{ad_City} {ad_State} {ad_country}</Text>
-    <Text>{ad_code}</Text>
-    </Box>
-    <Button mt={"10px"} w={"20%"} color="#005963" bg="none" borderRadius={"0px"} onClick={()=>handleEdit(1)}>Edit</Button>
-    </Flex>
-   
-</Box>
+                    <Box>
+                        {
+                            show === 1 ? <div>
+
+                                <FormControl isRequired >
+
+                                    <Flex>
+                                        <Box mt={"20px"}>
+                                            <FormLabel>First Name</FormLabel>
+                                            <Input value={ad_name} name="ad_name" onChange={e => onInputChange(e)} borderColor={"black"} borderRadius="0px" size="lg" />
+                                        </Box>
+                                        <Box ml={"20px"} mt={"20px"}>
+                                            <FormLabel>Last Name</FormLabel>
+                                            <Input value={ad_lname} name="ad_lname" onChange={e => onInputChange(e)} borderColor={"black"} borderRadius="0px" size="lg" />
+                                        </Box>
+                                    </Flex>
+                                    <br />
+                                    <FormLabel>Address</FormLabel>
+                                    <Input value={ad_add} name="ad_add" onChange={e => onInputChange(e)} w={"90%"} borderColor={"black"} borderRadius="0px" size={"lg"} />
+                                    <Flex>
+                                        <Box mt={"20px"}>
+                                            <FormLabel>Apt, unit, suite (optional)</FormLabel>
+                                            <Input value={ad_apt} name="ad_apt" onChange={e => onInputChange(e)} borderColor={"black"} borderRadius="0px" size="lg" />
+                                        </Box>
+                                        <Box ml={"20px"} mt={"20px"}>
+                                            <FormLabel>City</FormLabel>
+                                            <Input value={ad_City} name="ad_City" onChange={e => onInputChange(e)} borderColor={"black"} type="text" borderRadius="0px" size="lg" />
+                                        </Box>
+                                    </Flex>
+                                    <Flex w="90%">
+                                        <Box mt={"20px"}>
+                                            <FormLabel>Country</FormLabel>
+                                            <Input value={ad_country} name="ad_country" placeholder="India" onChange={e => onInputChange(e)} borderColor={"black"} borderRadius="0px" size="lg" />
+                                        </Box>
+                                        <Box ml={"20px"} mt={"20px"}>
+                                            <FormLabel>State</FormLabel>
+                                            <Input value={ad_State} name="ad_State" onChange={e => onInputChange(e)} borderColor={"black"} type="text" borderRadius="0px" size="lg" />
+                                        </Box>
+                                        <Box ml={"20px"} mt={"20px"}>
+                                            <FormLabel>Postal code</FormLabel>
+                                            <Input value={ad_code} name="ad_code" onChange={e => onInputChange(e)} borderColor={"black"} type="Number" borderRadius="0px" maxLength={"5"} size="lg" />
+                                        </Box>
+                                    </Flex>
+                                </FormControl>
+                                <button onClick={() => handleclick(2)} className="save-btn1">Save</button>
+                                <button className="save-btn2">Cancel</button>
+
+                            </div> : <div>
+                                <Box>
+                                    <Flex w="100%" justifyContent="space-between" >
+                                        <Box mt={"10px"}>
+                                            <Text>{ad_name} {ad_lname}</Text>
+                                            <Text>{ad_add} {ad_apt}</Text>
+                                            <Text>{ad_City} {ad_State} {ad_country}</Text>
+                                            <Text>{ad_code}</Text>
+                                        </Box>
+                                        <Button mt={"10px"} w={"20%"} color="#005963" bg="none" borderRadius={"0px"} onClick={() => handleEdit(1)}>Edit</Button>
+                                    </Flex>
+
+                                </Box>
 
 
-        </div>
-    }
-</Box>
+                            </div>
+                        }
+                    </Box>
 
 
                 </Box>
@@ -213,40 +248,40 @@ const handleEditt=()=>{
                     <hr />
                     <Box>
                         {
-                            showT ===1 ? 
-                        
-                    <div>
-                         <Stack spacing={4} w="66%" mt={"20px"} >
-                        <Flex justifyContent={"space-between"}>
-                            <Text fontWeight="600">Registered VAT/GST/Tax ID</Text>
-                            <Text color={"gray.600"}>optional</Text>
-                        </Flex>
+                            showT === 1 ?
 
-                        <InputGroup>
+                                <div>
+                                    <Stack spacing={4} w="66%" mt={"20px"} >
+                                        <Flex justifyContent={"space-between"}>
+                                            <Text fontWeight="600">Registered VAT/GST/Tax ID</Text>
+                                            <Text color={"gray.600"}>optional</Text>
+                                        </Flex>
 
-                            <InputRightElement
-                                pointerEvents='none'
-                                color='black.300'
-                                fontSize='1.2em'
-                                children='?'
-                            />
-                            <Input value={tax} name="tax" onChange={e=>onInputChange(e)}  borderColor={"black"} borderRadius="0px" size={"lg"} mt="-10px" />
-                        </InputGroup>
-                    </Stack>
-                    <Flex>
+                                        <InputGroup>
 
-                        <button onClick={()=>handletax(2)}   className="save-btn1">Save</button>
-                        <button className="save-btn2">Cancel</button>
-                    </Flex>
-                    </div> : <div>
-                        <Text mt={"5px"} fontWeight="600">Registered VAT/GST/Tax ID</Text>
-                        <Flex justifyContent={"space-between"} >
-                       <Text>{tax}</Text>
-                       <Button w={"20%"} color="#005963" bg="none" borderRadius={"0px"} onClick={()=>handleEditt(1)}>Edit</Button>
-                        </Flex>
+                                            <InputRightElement
+                                                pointerEvents='none'
+                                                color='black.300'
+                                                fontSize='1.2em'
+                                                children='?'
+                                            />
+                                            <Input value={tax} name="tax" onChange={e => onInputChange(e)} borderColor={"black"} borderRadius="0px" size={"lg"} mt="-10px" />
+                                        </InputGroup>
+                                    </Stack>
+                                    <Flex>
 
-                    </div>
-                    }
+                                        <button onClick={() => handletax(2)} className="save-btn1">Save</button>
+                                        <button className="save-btn2">Cancel</button>
+                                    </Flex>
+                                </div> : <div>
+                                    <Text mt={"5px"} fontWeight="600">Registered VAT/GST/Tax ID</Text>
+                                    <Flex justifyContent={"space-between"} >
+                                        <Text>{tax}</Text>
+                                        <Button w={"20%"} color="#005963" bg="none" borderRadius={"0px"} onClick={() => handleEditt(1)}>Edit</Button>
+                                    </Flex>
+
+                                </div>
+                        }
                     </Box>
                 </Box>
 
@@ -268,7 +303,7 @@ const handleEditt=()=>{
 
                     <Flex mt="2rem" justifyContent={"space-between"}>
                         <Text fontWeight={"600"}>Premium plan</Text>
-                        <Text fontWeight={"600"}>$276.66 / month</Text>
+                        <Text fontWeight={"600"}>₹{price}/ month</Text>
                     </Flex>
                     <Box>
                         <Text>10,000 contacts*</Text>
@@ -277,46 +312,46 @@ const handleEditt=()=>{
 
                     <Flex mt={"2rem"} mb="1rem" justifyContent={"space-between"}>
                         <Text fontWeight={"600"}>Tax</Text>
-                        <Text fontWeight={"600"}>$344</Text>
+                        <Text fontWeight={"600"}>₹{taxex}</Text>
                     </Flex>
                     <hr />
                     <Flex mt={"2rem"} justifyContent={"space-between"}>
                         <Text fontSize={"17px"} fontWeight={"600"}>Total</Text>
-                        <Text fontSize={"17px"} fontWeight={"600"}>$276.66 / month</Text>
+                        <Text fontSize={"17px"} fontWeight={"600"}>₹{payble}/ month</Text>
                     </Flex>
 
 
 
-                    <button className="paybuton"> Pay now </button>
+                    <button onClick={paynow} className="paybuton"> Pay now </button>
 
                     <Text fontSize={"12px"} mt="2rem" mb="2rem">By selecting “Pay now”, I understand that I am enrolling in a subscription plan and I authorize Mailchimp to charge my payment method each month at the then-current list price (plus applicable taxes) unless I cancel. I can cancel anytime by going to my Billing page in the Account Settings.</Text>
                     <Text fontSize={"12px"}>*When you exceed your limit, you incur additional charges of $37.29/mo per additional 1,000 contacts (comes with additional 15,000 email sends).
                         <Text fontSize="14px" color={"#138691"} >Learn More</Text> </Text>
                     <Box mt="2rem">
-                       
-
-{
-    div===1 ? <div>
-<Box>
-    <Text fontWeight={600}>Billing Email Address</Text>
-<Input value={b_email} name="b_email" onChange={e=>onInputChange(e)} borderRadius={"0px"} borderColor="black" bg={"white"} size="lg" mt={"4px"} type={"email"}/>
-<Flex mt={"10px"}>
-    <Button w={"30%"} borderRadius="0px" border={"1px solid #005963"} color="#005963" bg="none" onClick={()=> hadlediv(2)}>Save</Button>
-    <Button w={"30%"} color="#005963" bg="none">Cancel</Button>
-</Flex>
-</Box>
 
 
-    </div> : <div>
-    <Text fontSize={"14px"}>Your receipt will be sent to</Text>
-      <Flex justifyContent={"space-between"} >
-        <Text w={"60%"} fontWeight={600} mt={"5px"}>{b_email}</Text>
-        <Button w={"30%"} color="#005963" bg="none" borderRadius={"0px"}  onClick={()=>Setdiv(1)} >Edit</Button>
-        </Flex> 
-        </div>
-}
+                        {
+                            div === 1 ? <div>
+                                <Box>
+                                    <Text fontWeight={600}>Billing Email Address</Text>
+                                    <Input value={b_email} name="b_email" onChange={e => onInputChange(e)} borderRadius={"0px"} borderColor="black" bg={"white"} size="lg" mt={"4px"} type={"email"} />
+                                    <Flex mt={"10px"}>
+                                        <Button w={"30%"} borderRadius="0px" border={"1px solid #005963"} color="#005963" bg="none" onClick={() => hadlediv(2)}>Save</Button>
+                                        <Button w={"30%"} color="#005963" bg="none">Cancel</Button>
+                                    </Flex>
+                                </Box>
 
-<Text fontSize={"14px"} mt="2rem" mb="2rem">Actual price may vary. Prices displayed are estimates based on current exchange rates. Exact amount charged will vary and depends on the exchange rate at the time of payment processing. Prices displayed exclude any applicable taxes and fees, which will be added to the cost of all services purchased. For exact base pricing please refer to prices listed in USD.</Text>
+
+                            </div> : <div>
+                                <Text fontSize={"14px"}>Your receipt will be sent to</Text>
+                                <Flex justifyContent={"space-between"} >
+                                    <Text w={"60%"} fontWeight={600} mt={"5px"}>{b_email}</Text>
+                                    <Button w={"30%"} color="#005963" bg="none" borderRadius={"0px"} onClick={() => Setdiv(1)} >Edit</Button>
+                                </Flex>
+                            </div>
+                        }
+
+                        <Text fontSize={"14px"} mt="2rem" mb="2rem">Actual price may vary. Prices displayed are estimates based on current exchange rates. Exact amount charged will vary and depends on the exchange rate at the time of payment processing. Prices displayed exclude any applicable taxes and fees, which will be added to the cost of all services purchased. For exact base pricing please refer to prices listed in USD.</Text>
                     </Box>
 
                 </Box>
@@ -325,11 +360,11 @@ const handleEditt=()=>{
 
 
             </Box>
- {/* footer par */}
-<Box w={"120%"} mt={"5rem"}>
-<Text fontSize={"14px"}>©2001–2022 All Rights Reserved. Mailchimp® is a registered trademark of The Rocket Science Group, LLC.</Text>
-<Text fontSize={"14px"} color="#005963" cursor={"pointer"}>Privacy and Terms.</Text>
-</Box>
+            {/* footer par */}
+            <Box w={"120%"} mt={"5rem"}>
+                <Text fontSize={"14px"}>©2001–2022 All Rights Reserved. Mailchimp® is a registered trademark of The Rocket Science Group, LLC.</Text>
+                <Text fontSize={"14px"} color="#005963" cursor={"pointer"}>Privacy and Terms.</Text>
+            </Box>
 
 
         </div>
