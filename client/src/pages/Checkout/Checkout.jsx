@@ -1,10 +1,13 @@
 import {
-    Box, Text, Image, Modal,ModalOverlay,ModalContent,ModalHeader,ModalBody,ModalCloseButton, Flex, Button, InputGroup, InputRightElement, Input, Radio, RadioGroup, Checkbox, HStack, FormControl,
-    FormLabel,Stack, Select} from "@chakra-ui/react";
+
+    Box, Text, Image, Flex, Button,  InputGroup, InputRightElement,  Input, Radio, RadioGroup, Checkbox, HStack, FormControl,
+    FormLabel, Stack, Select
+} from "@chakra-ui/react";
 import { useState } from "react";
 
-
 import "./Checkout.css"
+import {Link} from "react-router-dom"
+
 import { useDisclosure } from "@chakra-ui/react";
 
 const onClose = () => {
@@ -322,13 +325,18 @@ const Checkout = () => {
 
 
 
-                    <button onClick={onOpen} className="paybuton"> Pay now </button>
+
+                   <Link to='/dashboard'>
+                    <button onClick={paynow} className="paybuton"> Pay now </button>
+                    </Link> 
+
                     <Box>
 
 
                         <Modal isOpen={isOpen} onClose={onClose}>
                             <ModalOverlay />
                             <ModalContent height="70%" >
+
 
 
                                 <Image w={"30%"} margin="auto" src="https://media.tenor.com/0AVbKGY_MxMAAAAM/check-mark-verified.gif" />

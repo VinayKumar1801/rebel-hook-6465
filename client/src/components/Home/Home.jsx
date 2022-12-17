@@ -4,10 +4,11 @@ import Styles from "./home.module.css";
 import first from "./first.json";
 import rightPlan from "./rightPlan.json";
 import integration from "./integration.json";
+import {Link} from "react-router-dom"
 const Home = () => {
   console.log(first);
   return (
-    <div class={Styles.main}>
+    <div className={Styles.main}>
       {/*----------------- first section------------------------ */}
 
       <Box
@@ -30,8 +31,8 @@ const Home = () => {
           Win new customers with the #1 email marketing and automations brand*
           that recommends ways to get more opens, clicks, and sales.
         </Text>
-        <button class={Styles.firstB}>
-          <span class={Styles.button_top}> Sign Up</span>
+        <button className={Styles.firstB}>
+        <Link to ='/signup'>  <span className={Styles.button_top}> Sign Up</span></Link>
         </button>
       </Box>
 
@@ -44,8 +45,8 @@ const Home = () => {
           lg: "repeat(4,1fr)",
         }}
       >
-        {first.map((ele) => (
-          <Box>
+        {first.map((ele,ind) => (
+          <Box key={ind}>
             <Box position="relative">
               <Image src={ele.image}></Image>
               <Text
@@ -76,14 +77,6 @@ const Home = () => {
         ))}
       </Grid>
 
-      {/*-------------------------- third section (video)----------------------------*/}
-
-      {/* <Box bg="black" h="50px">
-        <video src="" />
-      </Box> */}
-
-      {/* -------------------------fourth section (find the right plan)------------------------ */}
-
       <Box bg="#f6f6f4" padding="40px 0px">
         <Text
           textAlign="center"
@@ -108,6 +101,7 @@ const Home = () => {
               border="0.5px solid grey"
               direction="column"
               gap="20px"
+              key={index}
               padding="20px"
               _hover={{
                 boxShadow:
@@ -167,29 +161,14 @@ const Home = () => {
           Learn more See all plan details
         </Text>
         <Box textAlign="center" margin="20px 0px">
-          <button class={Styles.firstB}>
-            <span class={Styles.button_top}>See all paln details</span>
+          <button className={Styles.firstB}>
+        <Link to='/pricing'>
+            <span className={Styles.button_top}>See all plan details</span>
+        
+        </Link>
           </button>
         </Box>
       </Box>
-
-      {/*------------------------------- Fifth Section(Automation)-------------------------- */}
-
-      {/* <Box padding="40px 0px">
-        <Text textAlign="center" fontSize="40px" fontFamily="Georgia" h="45px">
-          Generate up to 4x more orders* with
-        </Text>
-        <Text textAlign="center" fontSize="40px" fontFamily="Georgia" h="45px">
-          Customer Journey Builder
-        </Text>
-        <Text textAlign="center" fontSize="40px" fontFamily="Georgia" h="45px">
-          automations
-        </Text>
-      </Box> */}
-
-      {/*------------------------------ sixth section -----------------*/}
-
-      {/*------------------------------ seventh section(integrations) -----------------*/}
 
       <Box w="85%" margin="auto">
         <Text
@@ -209,8 +188,8 @@ const Home = () => {
           }}
           mt="20px"
         >
-          {integration.map((ele) => (
-            <Flex padding="20px" gap="15px">
+          {integration.map((ele,ind) => (
+            <Flex padding="20px" key={ind} gap="15px">
               <Image src={ele.image} boxSize="90px"></Image>
               <Box>
                 <Text fontWeight="500">{ele.title}</Text>

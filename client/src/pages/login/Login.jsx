@@ -32,7 +32,7 @@ const Login = () => {
 
   if (isAuth) {
     // return console.log("login ho gya")
-    return  <Navigate to="/home" />;
+    return  <Navigate to="/dashboard" />;
   }
 
   const handleSubmit = (e) => {
@@ -51,11 +51,13 @@ const Login = () => {
         gap={6}
       >
         <GridItem p={"20px"} className="signleft">
-          <Image width={"30%"} mb="3rem" src={logo} />
+      <Link to='/'>
+            <Image width={"30%"} mb="3rem" src={logo} />
+        </Link>
           <Container>
             <Heading m={"5px 0"}>Log In</Heading>
             <Text m={"5px 0"}>
-              Need a Emailomatic account? <Link to='/' style={{color:"blue"}}>Create an account</Link>
+              Need a Emailomatic account? <Link to='/signup' style={{color:"blue"}}>Create an account</Link>
             </Text>
             <FormControl isRequired>
               <FormLabel m={"10px 0"}>Email</FormLabel>

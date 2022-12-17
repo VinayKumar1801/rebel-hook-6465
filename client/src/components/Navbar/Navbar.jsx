@@ -14,16 +14,13 @@ import {
   useColorModeValue,
   // useBreakpointValue,
   useDisclosure,
+  Image,
 } from "@chakra-ui/react";
-//   import {
-//     HamburgerIcon,
-//     CloseIcon,
-//     ChevronDownIcon,
-//     ChevronRightIcon,
-//   } from '@chakra-ui/icons';
+import Logo from "../../assets/logo.png"
+import {Link as Linking} from "react-router-dom"
 
 export default function Navbar() {
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen } = useDisclosure();
 
   return (
     <Box>
@@ -38,20 +35,7 @@ export default function Navbar() {
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
       >
-        {/* <Flex
-          flex={{ base: 1, md: "auto" }}
-          ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
-        > */}
-          {/* <IconButton
-              onClick={onToggle}
-              icon={
-                isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-              }
-              variant={'ghost'}
-              aria-label={'Toggle Navigation'}
-            /> */}
-        {/* </Flex> */}
+
         <Flex flex={{ base: 1 }} 
         // justify="space-evenly"
         justify={{ base: "center", md: "start" }}
@@ -73,7 +57,9 @@ export default function Navbar() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-          Emailomatic.com
+            <Linking to='/'>
+         <Image width={"25%"} src={Logo}/>
+            </Linking>
           </Text>
 
         <Stack
@@ -82,15 +68,12 @@ export default function Navbar() {
           direction={"row"}
           spacing={6}
         >
+          <Linking to='/login'>
           <Button
             //   as={'a'}
             border="1px solid"
             borderRadius="50px"
-            //   fontSize={'sm'}
-            //   color={'black'}
-            //   fontWeight={400}
-            //   variant={'link'}
-            // display={{ base: "none", md: "inline-flex" }}
+      
             fontSize={"sm"}
             fontWeight={600}
             color={"black"}
@@ -99,6 +82,8 @@ export default function Navbar() {
           >
             Login
           </Button>
+          </Linking>
+          <Linking to='/signup'>
           <Button
             display={{ base: "inline-flex", md: "inline-flex" }}
             fontSize={"sm"}
@@ -114,6 +99,7 @@ export default function Navbar() {
           >
             Sign Up
           </Button>
+          </Linking>
         </Stack>
       </Flex>
 
@@ -135,9 +121,9 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link
+              <Linking
                 p={2}
-                href={navItem.href ?? "#"}
+                to={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
                 color={linkColor}
@@ -147,7 +133,7 @@ const DesktopNav = () => {
                 }}
               >
                 {navItem.label}
-              </Link>
+              </Linking>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -325,6 +311,6 @@ const NAV_ITEMS = [
   },
   {
     label: "Pricing",
-    href: "#",
+    href: "/pricing",
   },
 ];

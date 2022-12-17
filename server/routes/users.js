@@ -18,8 +18,9 @@ const redisClient = new Redis({
 /* GET users listing. */
 router.post('/signup', async function (req, res) {
   const {email,password,username,name} = req.body;
+  // console.log("check")
   const hash = await argon2.hash(password)
-  console.log("req aa gai")
+  console.log(req.body)
   const userexist = await UserModel.findOne({email,username})
   try {
     if(userexist){
