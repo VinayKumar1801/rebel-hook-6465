@@ -1,22 +1,13 @@
 import {
-    Box, Text, Image, Grid,  Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton, Flex, Button, Option, InputGroup, InputRightElement, Form, Input, Radio, RadioGroup, Checkbox, HStack, FormControl,
-    FormLabel,
-    FormErrorMessage,
-    FormHelperText, Stack, Container, Select
-} from "@chakra-ui/react";
+    Box, Text, Image, Modal,ModalOverlay,ModalContent,ModalHeader,ModalBody,ModalCloseButton, Flex, Button, InputGroup, InputRightElement, Input, Radio, RadioGroup, Checkbox, HStack, FormControl,
+    FormLabel,Stack, Select} from "@chakra-ui/react";
 import { useState } from "react";
 
 
 import "./Checkout.css"
 import { useDisclosure } from "@chakra-ui/react";
 
-const onClose=()=>{
+const onClose = () => {
     // Navigate to ="/"
 }
 
@@ -38,7 +29,7 @@ const Checkout = () => {
 
     const handleclick = (e) => {
         SetShow(e);
-        
+
     }
 
     const [Tax, SetTax] = useState({
@@ -83,9 +74,9 @@ const Checkout = () => {
     const taxex = Math.floor(price * 18 / 100);
     const payble = price + taxex;
 
-    const paynow = () => {
-        alert("Payment Successfull !!")
-    }
+    // const paynow = () => {
+    //     alert("Payment Successfull !!")
+    // }
 
     return (
         <div className="main">
@@ -334,23 +325,23 @@ const Checkout = () => {
                     <button onClick={onOpen} className="paybuton"> Pay now </button>
                     <Box>
 
-                   
-                    <Modal  isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent height="70%" >
-         
-          
-           <Image w={"30%"} margin="auto" src="https://media.tenor.com/0AVbKGY_MxMAAAAM/check-mark-verified.gif"/>
-          <ModalCloseButton />
-          <ModalBody>
-            <ModalHeader textAlign={"center"} mt="-1rem" fontWeight={"bold"} color={"green.600"} fontSize="3rem">Thank You!</ModalHeader>
-           <Text textAlign={"center"} color="gray.600" fontWeight={"bold"}  fontSize="18px" mt={"-1rem"} >Payment done Successfully</Text>
-           <Text textAlign={"center"} color="gray.600" fontWeight={"400"} mt={"1rem"}  fontSize="14px" >You will be redirected to the home page shortly or click here to return home page </Text>
-           <Button onClick={onClose} w={"10rem"} color="white" bg="green.400" _hover={{bg:"green.500"}}  fontSize="18px"  h="8vh" borderRadius="20px" ml="8rem" padding={"10px"} mt={"2rem"}  >Home</Button>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
-      </Box>
+
+                        <Modal isOpen={isOpen} onClose={onClose}>
+                            <ModalOverlay />
+                            <ModalContent height="70%" >
+
+
+                                <Image w={"30%"} margin="auto" src="https://media.tenor.com/0AVbKGY_MxMAAAAM/check-mark-verified.gif" />
+                                <ModalCloseButton />
+                                <ModalBody>
+                                    <ModalHeader textAlign={"center"} mt="-1rem" fontWeight={"bold"} color={"green.600"} fontSize="3rem">Thank You!</ModalHeader>
+                                    <Text textAlign={"center"} color="gray.600" fontWeight={"bold"} fontSize="18px" mt={"-1rem"} >Payment done Successfully</Text>
+                                    <Text textAlign={"center"} color="gray.600" fontWeight={"400"} mt={"1rem"} fontSize="14px" >You will be redirected to the home page shortly or click here to return home page </Text>
+                                    <Button onClick={onClose} w={"10rem"} color="white" bg="green.400" _hover={{ bg: "green.500" }} fontSize="18px" h="8vh" borderRadius="20px" ml="8rem" padding={"10px"} mt={"2rem"}  >Home</Button>
+                                </ModalBody>
+                            </ModalContent>
+                        </Modal>
+                    </Box>
                     <Text fontSize={"12px"} mt="2rem" mb="2rem">By selecting “Pay now”, I understand that I am enrolling in a subscription plan and I authorize Mailchimp to charge my payment method each month at the then-current list price (plus applicable taxes) unless I cancel. I can cancel anytime by going to my Billing page in the Account Settings.</Text>
                     <Text fontSize={"12px"}>*When you exceed your limit, you incur additional charges of $37.29/mo per additional 1,000 contacts (comes with additional 15,000 email sends).
                         <Text fontSize="14px" color={"#138691"} >Learn More</Text> </Text>
