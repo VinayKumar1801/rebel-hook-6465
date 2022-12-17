@@ -7,14 +7,13 @@ import TransactionalEmail from "./TransactionalEmail/TransactionalEmail";
 export default function Platform() {
   return (
     <Fragment>
-      <Box>
-        <Tabs variant="enclosed">
+      <Box py="4">
+        <Tabs>
           <TabList
             w="full"
-            justifyContent="space-between"
-            maxW="container.lg"
+            justifyContent="space-around"
+            maxW="container.xl"
             m="auto"
-            py="4"
             fontSize="2xl"
           >
             <Tab>Marketing Platform</Tab>
