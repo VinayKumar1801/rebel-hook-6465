@@ -17,20 +17,19 @@ import {
   Image,
 } from "@chakra-ui/react";
 
-import {RxHamburgerMenu} from "react-icons/rx";
-import {GrClose} from "react-icons/gr";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { GrClose } from "react-icons/gr";
 
-  // import {
-  //   HamburgerIcon,
-  //   CloseIcon,
-  //   ChevronDownIcon,
-  //   ChevronRightIcon,
-  // } from '@chakra-ui/icons';
-  import logo from "../../assets/logo.png"
+// import {
+//   HamburgerIcon,
+//   CloseIcon,
+//   ChevronDownIcon,
+//   ChevronRightIcon,
+// } from '@chakra-ui/icons';
+import logo from "../../assets/logo.png";
 
-import Logo from "../../assets/logo.png"
-import {Link as Linking} from "react-router-dom"
-
+import Logo from "../../assets/logo.png";
+import { Link as Linking } from "react-router-dom";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -48,47 +47,33 @@ export default function Navbar() {
         align={"center"}
         justifyContent="space-between"
       >
-
-         {/* <Flex
-          flex={{ base: 1, md: "auto" }}
-          ml={{ base: -2 }}
+        <IconButton
           display={{ base: "flex", md: "none" }}
-        >  */}
-          <IconButton
-          display={{ base: "flex", md: "none" }}
-              onClick={onToggle}
-              icon={
-                isOpen ? <GrClose w={3} h={3} /> : <RxHamburgerMenu w={5} h={5} />
-              }
-              variant={'ghost'}
-              aria-label={'Toggle Navigation'}
-            />
-        {/* </Flex> */}
+          onClick={onToggle}
+          icon={
+            isOpen ? <GrClose w={3} h={3} /> : <RxHamburgerMenu w={5} h={5} />
+          }
+          variant={"ghost"}
+          aria-label={"Toggle Navigation"}
+        />
 
+        <Flex display={{ base: "none", md: "flex" }} ml={10}   >
+          <DesktopNav />
+        </Flex>
 
-        {/* <Flex flex={{ base: 1 }} 
-        justify={{ base: "center", md: "start" }}
-        > */}
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
-          </Flex>
-        {/* </Flex> */}
-        
-         <Text
-        // border="1px solid"
-        textAlign="left"
-        w="43%"
-        fontWeight="700"
-        fontSize="25px"
-            // textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-
-            <Linking to='/'>
-         <Image width={"25%"} src={Logo}/>
-            </Linking>
-          </Text>
+        <Text
+          // border="1px solid"
+          textAlign="center"
+          w={{base:"",sm:"",md:"25%",lg:"25%"}}
+          fontWeight="700"
+          fontSize="25px"
+          fontFamily={"heading"}
+          color={useColorModeValue("gray.800", "white")}
+        >
+          <Linking to="/">
+            <Image maxH="70px" src={Logo} />
+          </Linking>
+        </Text>
 
         <Stack
           flex={{ base: 1, md: 0 }}
@@ -96,34 +81,33 @@ export default function Navbar() {
           direction={"row"}
           spacing={4}
         >
-          <Linking to='/login'>
-          <Button
-            //   as={'a'}
-            border="1px solid"
-            borderRadius="50px"
-
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"black"}
-            href={"#"}
-            display={{base:"none",sm:"flex",md:"",lg:""}}
-          >
-            Login
-          </Button>
+          <Linking to="/login">
+            <Button
+              //   as={'a'}
+              border="1px solid"
+              borderRadius="50px"
+              fontSize={"sm"}
+              fontWeight={600}
+              color={"black"}
+              href={"#"}
+              display={{ base: "none", sm: "flex", md: "", lg: "" }}
+            >
+              Login
+            </Button>
           </Linking>
-          <Linking to='/signup'>
-          <Button
-            display={{ base: "inline-flex", md: "inline-flex" }}
-            fontSize={"sm"}
-            borderRadius="50px"
-            border="1px solid"
-            fontWeight={600}
-            color={"black"}
-            bg={"yellow"}
-            href={"#"}
-          >
-            Sign Up
-          </Button>
+          <Linking to="/signup">
+            <Button
+              display={{ base: "inline-flex", md: "inline-flex" }}
+              fontSize={"sm"}
+              borderRadius="50px"
+              border="1px solid"
+              fontWeight={600}
+              color={"black"}
+              bg={"yellow"}
+              href={"#"}
+            >
+              Sign Up
+            </Button>
           </Linking>
         </Stack>
       </Flex>
