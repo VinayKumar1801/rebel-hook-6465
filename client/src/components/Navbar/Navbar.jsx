@@ -2,7 +2,7 @@ import {
   Box,
   Flex,
   Text,
-//   IconButton,
+  IconButton,
   Button,
   Stack,
   Collapse,
@@ -16,8 +16,21 @@ import {
   useDisclosure,
   Image,
 } from "@chakra-ui/react";
+
+import {RxHamburgerMenu} from "react-icons/rx";
+import {GrClose} from "react-icons/gr";
+
+  // import {
+  //   HamburgerIcon,
+  //   CloseIcon,
+  //   ChevronDownIcon,
+  //   ChevronRightIcon,
+  // } from '@chakra-ui/icons';
+  import logo from "../../assets/logo.png"
+
 import Logo from "../../assets/logo.png"
 import {Link as Linking} from "react-router-dom"
+
 
 export default function Navbar() {
   const { isOpen } = useDisclosure();
@@ -34,20 +47,35 @@ export default function Navbar() {
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
+        justifyContent="space-between"
       >
 
-        <Flex flex={{ base: 1 }} 
-        // justify="space-evenly"
-        justify={{ base: "center", md: "start" }}
-        >
-         
+         {/* <Flex
+          flex={{ base: 1, md: "auto" }}
+          ml={{ base: -2 }}
+          display={{ base: "flex", md: "none" }}
+        >  */}
+          <IconButton
+          display={{ base: "flex", md: "none" }}
+              onClick={onToggle}
+              icon={
+                isOpen ? <GrClose w={3} h={3} /> : <RxHamburgerMenu w={5} h={5} />
+              }
+              variant={'ghost'}
+              aria-label={'Toggle Navigation'}
+            />
+        {/* </Flex> */}
 
+
+        {/* <Flex flex={{ base: 1 }} 
+        justify={{ base: "center", md: "start" }}
+        > */}
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
-        </Flex>
+        {/* </Flex> */}
         
-        <Text
+        {/* <Text
         // border="1px solid"
         textAlign="left"
         w="43%"
@@ -57,6 +85,7 @@ export default function Navbar() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
+
             <Linking to='/'>
          <Image width={"25%"} src={Logo}/>
             </Linking>
@@ -66,19 +95,19 @@ export default function Navbar() {
           flex={{ base: 1, md: 0 }}
           justify={"flex-end"}
           direction={"row"}
-          spacing={6}
+          spacing={4}
         >
           <Linking to='/login'>
           <Button
             //   as={'a'}
             border="1px solid"
             borderRadius="50px"
-      
+
             fontSize={"sm"}
             fontWeight={600}
             color={"black"}
-            //   bg={'yellow'}
             href={"#"}
+            display={{base:"none",sm:"flex",md:"",lg:""}}
           >
             Login
           </Button>
@@ -93,9 +122,6 @@ export default function Navbar() {
             color={"black"}
             bg={"yellow"}
             href={"#"}
-            //   _hover={{
-            //     bg: 'pink.300',
-            //   }}
           >
             Sign Up
           </Button>

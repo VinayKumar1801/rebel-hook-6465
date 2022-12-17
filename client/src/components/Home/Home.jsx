@@ -170,6 +170,25 @@ const Home = () => {
         </Box>
       </Box>
 
+
+      {/*------------------------------- Fifth Section(Automation)-------------------------- */}
+
+      <Box padding="40px 0px">
+        <Text textAlign="center" fontSize="40px" fontFamily="Georgia" >
+          Generate up to 4x more orders* with
+        </Text>
+        <Text textAlign="center" fontSize="40px" fontFamily="Georgia" >
+          Customer Journey Builder
+        </Text>
+        <Text textAlign="center" fontSize="40px" fontFamily="Georgia" >
+          automations
+        </Text>
+      </Box>
+
+      {/*------------------------------ sixth section -----------------*/}
+
+      {/*------------------------------ seven section(integrations) -----------------*/}
+
       <Box w="85%" margin="auto">
         <Text
           textAlign="left"
