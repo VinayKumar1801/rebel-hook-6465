@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Flex,
-  HStack,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Stack, Text, VStack } from "@chakra-ui/react";
 import { BiRupee } from "react-icons/bi";
 import { Fragment } from "react";
 import plandata from "../../../assets/website_plans.json";
