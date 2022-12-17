@@ -10,7 +10,7 @@ const EmailRouter = require('./routes/email')
 const cors = require("cors")
 require("dotenv").config()
 var app = express();
-// const PORT = process.env.PORT
+const PORT = process.env.PORT
 // console.log(PORT)
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,13 +43,13 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(8080,async()=>{
-  await connection()
-    console.log(`http://localhost:8080`)
-})
-// app.listen(PORT,async()=>{
+// app.listen(8080,async()=>{
 //   await connection()
-//     console.log(`http://localhost:${PORT}`)
+//     console.log(`http://localhost:8080`)
 // })
+app.listen(PORT,async()=>{
+  await connection()
+    console.log(`http://localhost:${PORT}`)
+})
 
 module.exports = app;
