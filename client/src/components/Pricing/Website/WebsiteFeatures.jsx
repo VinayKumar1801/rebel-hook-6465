@@ -9,8 +9,10 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Fragment } from "react";
-import planImages from "../../assets/pricing_images.json";
-import Questions from "./Questions";
+import planImages from "../../../assets/pricing_images.json";
+import Questions from "../Marketing/Questions";
+import Featured from "./Featured";
+
 export default function WebsiteFeatures() {
   return (
     <Fragment>
@@ -46,33 +48,7 @@ export default function WebsiteFeatures() {
           </Box>
         </Box>
 
-        <Box w="full" bg="gray.100">
-          <Box p="4" maxW="container.lg" m="auto" textAlign="center">
-            <Heading as="h3" fontSize="2xl" py="6">
-              Featured Product:
-            </Heading>
-            <Box maxW="sm" m="auto">
-              <Text fontWeight="medium">
-                Create unlimited one-on-one and group services with our new
-                <Box as="span" color="blue.500" px="2">
-                  Advanced Scheduling
-                </Box>
-                add-on for $8/month.
-              </Text>
-            </Box>
-            <Box py="6">
-              <Button
-                variant="solid"
-                colorScheme="blue"
-                borderRadius="full"
-                h="12"
-                p="4"
-              >
-                Buy Now
-              </Button>
-            </Box>
-          </Box>
-        </Box>
+        <Featured />
         <Box maxW="container.lg" m="auto" py="10" px="4">
           <Stack direction={{ base: "column", lg: "row" }} gap="10">
             <Box>

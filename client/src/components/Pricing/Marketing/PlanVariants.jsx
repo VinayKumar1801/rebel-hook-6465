@@ -17,7 +17,7 @@ import { BiRupee } from "react-icons/bi";
 
 import { useState } from "react";
 import { Fragment } from "react";
-import plans from "../../assets/plans.json";
+import plans from "../../../assets/plans.json";
 import PlanDetails from "./PlanDetails";
 
 const contactList = [500, 1500, 2500, 5000, 10000, 50000, 100000];
