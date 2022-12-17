@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/email',EmailRouter)
+// app.use('/email',EmailRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -42,9 +42,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(8080,async()=>{
+
+app.listen(PORT,async()=>{
   await connection()
-    console.log(`http://localhost:8080`)
+    console.log(`http://localhost:${PORT}`)
 })
 
 module.exports = app;

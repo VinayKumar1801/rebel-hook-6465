@@ -36,7 +36,7 @@ import {GrIntegration} from "react-icons/gr"
 import {AiOutlineUser} from "react-icons/ai"
 import { userLogout } from '../../redux/userLogin/userLogin.action';
 import {useDispatch} from "react-redux"
-
+import {Link as Linking} from "react-router-dom"
 
 
 
@@ -207,7 +207,10 @@ const MobileNav = ({ onOpen, ...rest }) => {
               bg={useColorModeValue('white', 'gray.900')}
               borderColor={useColorModeValue('gray.200', 'gray.700')}>
               <MenuItem>Profile</MenuItem>
+              <Linking to ="/pricing">
               <MenuItem>Billing</MenuItem>
+              </Linking>
+              
               <MenuItem >Settings</MenuItem>
               <MenuDivider />
               <MenuItem onClick={handleSubmit}>Sign out</MenuItem>

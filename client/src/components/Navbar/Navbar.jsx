@@ -16,6 +16,7 @@ import {
   useDisclosure,
   Image,
 } from "@chakra-ui/react";
+
 import {RxHamburgerMenu} from "react-icons/rx";
 import {GrClose} from "react-icons/gr";
 
@@ -27,8 +28,12 @@ import {GrClose} from "react-icons/gr";
   // } from '@chakra-ui/icons';
   import logo from "../../assets/logo.png"
 
+import Logo from "../../assets/logo.png"
+import {Link as Linking} from "react-router-dom"
+
+
 export default function Navbar() {
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen } = useDisclosure();
 
   return (
     <Box>
@@ -44,6 +49,7 @@ export default function Navbar() {
         align={"center"}
         justifyContent="space-between"
       >
+
          {/* <Flex
           flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
@@ -59,6 +65,7 @@ export default function Navbar() {
               aria-label={'Toggle Navigation'}
             />
         {/* </Flex> */}
+
 
         {/* <Flex flex={{ base: 1 }} 
         justify={{ base: "center", md: "start" }}
@@ -78,9 +85,11 @@ export default function Navbar() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-          Emailomatic.com
-          </Text> */}
-          <Image src={logo} maxH="70px"></Image>
+
+            <Linking to='/'>
+         <Image width={"25%"} src={Logo}/>
+            </Linking>
+          </Text>
 
         <Stack
           flex={{ base: 1, md: 0 }}
@@ -88,10 +97,12 @@ export default function Navbar() {
           direction={"row"}
           spacing={4}
         >
+          <Linking to='/login'>
           <Button
             //   as={'a'}
             border="1px solid"
             borderRadius="50px"
+
             fontSize={"sm"}
             fontWeight={600}
             color={"black"}
@@ -100,6 +111,8 @@ export default function Navbar() {
           >
             Login
           </Button>
+          </Linking>
+          <Linking to='/signup'>
           <Button
             display={{ base: "inline-flex", md: "inline-flex" }}
             fontSize={"sm"}
@@ -112,6 +125,7 @@ export default function Navbar() {
           >
             Sign Up
           </Button>
+          </Linking>
         </Stack>
       </Flex>
 
@@ -133,9 +147,9 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link
+              <Linking
                 p={2}
-                href={navItem.href ?? "#"}
+                to={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
                 color={linkColor}
@@ -145,7 +159,7 @@ const DesktopNav = () => {
                 }}
               >
                 {navItem.label}
-              </Link>
+              </Linking>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -323,6 +337,6 @@ const NAV_ITEMS = [
   },
   {
     label: "Pricing",
-    href: "#",
+    href: "/pricing",
   },
 ];
