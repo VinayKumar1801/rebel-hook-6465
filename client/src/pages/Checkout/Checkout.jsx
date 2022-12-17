@@ -1,7 +1,7 @@
 import {
 
     Box, Text, Image, Flex, Button,  InputGroup, InputRightElement,  Input, Radio, RadioGroup, Checkbox, HStack, FormControl,
-    FormLabel, Stack, Select
+    FormLabel, Stack, Select, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, ModalHeader
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -77,9 +77,9 @@ const Checkout = () => {
     const taxex = Math.floor(price * 18 / 100);
     const payble = price + taxex;
 
-    // const paynow = () => {
-    //     alert("Payment Successfull !!")
-    // }
+    const paynow = () => {
+        alert("Payment Successfull !!")
+    }
 
     return (
         <div className="main">
