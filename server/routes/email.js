@@ -1,31 +1,47 @@
-// var express = require('express');
-// var router = express.Router();
-// const sgMail = require('@sendgrid/mail')
-// sgMail.setApiKey(`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`)
+var express = require('express');
+var router = express.Router();
+require("dotenv").config()
+const nodemailer = require('nodemailer');
 
-// const msg = {
-//   to: 'rock.stone951@gmail.com', // Change to your recipient
-//   from: 'emailomatic99@gmail.com', // Change to your verified sender
-//   subject: 'Sending with SendGrid is Fun',
-//   text: 'and easy to do anywhere, even with Node.js',
-//   html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-// }
+function sendEmail(){
+    return new Promise((resolve,reject)=>{
+        let transporter = nodemailer.createTransport({
+            service:"gmail",
+            auth:{
+                user:'emailomatic1@gmail.com',
+                pass:'okiiurvhvjaoofyd',
+            }
+        })
+        const mail_config = {
+            from:"emailomatic1@gmail.com",
+            to:"rock.stone951@gmail.com",
+            subject:'Testing',
+            text:"checking "
+        }
+        transporter.sendMail(mail_config,(error,info)=>{
+            if(error){
+                console.log(error)
+                return reject({message:`An error occured`})
+            }
+            return resolve({message:'Email sent succesfully'})
+        }); 
+    })
+}
+router.get('/',(req,res)=>{
+    sendEmail()
+    .then(response=>res.send(response.message))
+    .catch(error=>res.status(500).send(errror.message))
+})
+
+router.post('/send_email',(req,res)=>{
+    sendEmail(req.body)
+    .then(response=>res.send(response.message))
+    .catch(error=>res.status(500).send(errror.message))
+})
 
 
 
 
-// router.get('/', function(req, res, next) {
-// //   res.render('Email', { title: 'Express' });
-// console.log('request for email')  
-// sgMail.send(msg)
-//   .then((response) => {
-    
-//     console.log(response[0].statusCode)
-//     console.log(response[0].headers)
-//   })
-//   .catch((error) => {
-//     console.error(error.message)
-//   })
-// });
 
-// module.exports = router;
+
+module.exports = router;
