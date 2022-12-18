@@ -30,9 +30,11 @@ import logo from "../../assets/logo.png";
 
 import Logo from "../../assets/logo.png";
 import { Link as Linking } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const { isAuth } = useSelector((state) => state.userLogin);
   return (
     <Box>
       <Flex
@@ -57,14 +59,14 @@ export default function Navbar() {
           aria-label={"Toggle Navigation"}
         />
 
-        <Flex display={{ base: "none", md: "flex" }} ml={10}   >
+        <Flex display={{ base: "none", md: "flex" }} ml={10}>
           <DesktopNav />
         </Flex>
 
         <Text
           // border="1px solid"
           textAlign="center"
-          w={{base:"",sm:"",md:"25%",lg:"25%"}}
+          w={{ base: "", sm: "", md: "25%", lg: "25%" }}
           fontWeight="700"
           fontSize="25px"
           fontFamily={"heading"}
@@ -92,23 +94,26 @@ export default function Navbar() {
               href={"#"}
               display={{ base: "none", sm: "flex", md: "", lg: "" }}
             >
-              Login
+              {isAuth ? "Logout" : "Login"}
             </Button>
           </Linking>
-          <Linking to="/signup">
-            <Button
-              display={{ base: "inline-flex", md: "inline-flex" }}
-              fontSize={"sm"}
-              borderRadius="50px"
-              border="1px solid"
-              fontWeight={600}
-              color={"black"}
-              bg={"yellow"}
-              href={"#"}
-            >
-              Sign Up
-            </Button>
-          </Linking>
+          {!isAuth && (
+            <Linking to="/signup">
+              <Button
+                display={{ base: "inline-flex", md: "inline-flex" }}
+                fontSize={"sm"}
+                borderRadius="50px"
+                border="1px solid"
+                fontWeight={600}
+                color={"black"}
+                bg={"yellow"}
+                href={"#"}
+              >
+                Sign Up
+              </Button>
+            </Linking>
+          )}
+          !
         </Stack>
       </Flex>
 

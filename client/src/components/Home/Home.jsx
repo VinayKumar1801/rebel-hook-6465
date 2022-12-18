@@ -4,9 +4,9 @@ import Styles from "./home.module.css";
 import first from "./first.json";
 import rightPlan from "./rightPlan.json";
 import integration from "./integration.json";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 const Home = () => {
-  console.log(first);
+  // console.log(first);
   return (
     <div className={Styles.main}>
       {/*----------------- first section------------------------ */}
@@ -32,7 +32,10 @@ const Home = () => {
           that recommends ways to get more opens, clicks, and sales.
         </Text>
         <button className={Styles.firstB}>
-        <Link to ='/signup'>  <span className={Styles.button_top}> Sign Up</span></Link>
+          <Link to="/signup">
+            {" "}
+            <span className={Styles.button_top}> Sign Up</span>
+          </Link>
         </button>
       </Box>
 
@@ -45,7 +48,7 @@ const Home = () => {
           lg: "repeat(4,1fr)",
         }}
       >
-        {first.map((ele,ind) => (
+        {first.map((ele, ind) => (
           <Box key={ind}>
             <Box position="relative">
               <Image src={ele.image}></Image>
@@ -162,25 +165,23 @@ const Home = () => {
         </Text>
         <Box textAlign="center" margin="20px 0px">
           <button className={Styles.firstB}>
-        <Link to='/pricing'>
-            <span className={Styles.button_top}>See all plan details</span>
-        
-        </Link>
+            <Link to="/pricing">
+              <span className={Styles.button_top}>See all plan details</span>
+            </Link>
           </button>
         </Box>
       </Box>
 
-
       {/*------------------------------- Fifth Section(Automation)-------------------------- */}
 
       <Box padding="40px 0px">
-        <Text textAlign="center" fontSize="40px" fontFamily="Georgia" >
+        <Text textAlign="center" fontSize="40px" fontFamily="Georgia">
           Generate up to 4x more orders* with
         </Text>
-        <Text textAlign="center" fontSize="40px" fontFamily="Georgia" >
+        <Text textAlign="center" fontSize="40px" fontFamily="Georgia">
           Customer Journey Builder
         </Text>
-        <Text textAlign="center" fontSize="40px" fontFamily="Georgia" >
+        <Text textAlign="center" fontSize="40px" fontFamily="Georgia">
           automations
         </Text>
       </Box>
@@ -207,7 +208,7 @@ const Home = () => {
           }}
           mt="20px"
         >
-          {integration.map((ele,ind) => (
+          {integration.map((ele, ind) => (
             <Flex padding="20px" key={ind} gap="15px">
               <Image src={ele.image} boxSize="90px"></Image>
               <Box>
