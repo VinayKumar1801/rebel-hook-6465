@@ -3,6 +3,7 @@ import axios from "axios";
 import { USER_SIGNUP, USER_SIGNUP_ERROR } from "./userSignup.type";
 
 const mainUrl = process.env.REACT_APP_MAIN_URL;
+// const mainUrl = `http://localhost:8080`;
 
 export const signupUser = (cred) => async(dispatch) => {
     // const navigate = useNavigate()
