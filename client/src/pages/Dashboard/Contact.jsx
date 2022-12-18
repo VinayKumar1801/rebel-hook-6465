@@ -24,13 +24,14 @@ const Contact = () => {
   const [contact, setContact] = useState(null);
   const [allContact,setAllContact] =useState([])
   const [num,setNum] = useState(0);
-  const { email } = useSelector((store) => store.userLogin);
+  const {email}  = useSelector((store) => store.userLogin);
   const addContact = async () => {
+   
     if (!name || !contactemail || !address || !contact) {
         return alert("Please fill all the details");
     }
-    let response = await axios.post("http://localhost:8080/contact", {
-      u_email: "Rakesh@gmail.com",
+    let response = await axios.post("http://localhost:8765/contact", {
+      u_email: email,
       name: name,
       email: contactemail,
       address: address,
@@ -52,7 +53,7 @@ const Contact = () => {
   };
   const getContact = async()=>{
     try {
-            let res = await axios.get(`http://localhost:8080/contact?user_email=Rakesh@gmail.com`)
+            let res = await axios.get(`http://localhost:8765/contact?user_email=${email}`)
             
             setAllContact(res.data)
     } catch (error) {
@@ -63,7 +64,7 @@ const Contact = () => {
     getContact()
   },[num])
   return (
-    <>
+    <Box py={15} w="80%">
       <Flex
         minH={"100vh"}
         align={"center"}
@@ -153,7 +154,7 @@ const Contact = () => {
         </Stack>
       </Flex>
       <ShowContact data = {allContact}/>
-    </>
+    </Box>
   );
 };
 

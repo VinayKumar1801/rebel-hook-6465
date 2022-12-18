@@ -32,6 +32,7 @@ export default function Email() {
   const [body,setBody] = useState("")
 
   const { email } = useSelector((store) => store.userLogin);
+  
   const handlesendEmail=async()=>{
     let obj={body,subject,selectedUsers,email};
     if(!subject || !body || selectedUsers.length==0){
@@ -45,7 +46,7 @@ export default function Email() {
          
     }
     try {
-        let res = await axios.post("http://localhost:8080/email",obj)
+        let res = await axios.post("http://localhost:8765/email",obj)
         console.log(res)
         // if(res.message=="Email sent succesfully"){
 
@@ -69,7 +70,7 @@ export default function Email() {
   }
   const getContact = async()=>{
     try {
-            let res = await axios.get(`http://localhost:8080/contact?user_email=Rakesh@gmail.com`)
+            let res = await axios.get(`http://localhost:8765/contact?user_email=${email}`)
             console.log(res.data)
             setAllContact(res.data)
     } catch (error) {
@@ -170,6 +171,7 @@ export default function Email() {
       <TableContainer w="95%" boxShadow='base' p="5px">
   <Table variant='striped'>
     
+
     <Thead>
       <Tr>
         <Th>select</Th>
