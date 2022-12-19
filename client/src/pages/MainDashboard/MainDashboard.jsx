@@ -1,7 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import SidebarWithHeader from '../../components/Sidebar/Sidebar'
-import {Navigate} from "react-router-dom"
+import {Navigate, Route, Routes} from "react-router-dom"
+import Email from '../Dashboard/Email';
+import Contact from '../Dashboard/Contact';
 
 const MainDashboard = () => {
   const { isAuth } = useSelector((store) => store.userLogin);
@@ -11,6 +13,8 @@ const MainDashboard = () => {
   return (
     <div>
      <SidebarWithHeader/>
+     
+    
     </div>
   )
 }

@@ -16,6 +16,8 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import ShowContact from "./ShowContact";
+import SidebarWithHeader from "../../components/Sidebar/Sidebar";
+
 
 const Contact = () => {
   const [name, setName] = useState(null);
@@ -24,12 +26,13 @@ const Contact = () => {
   const [contact, setContact] = useState(null);
   const [allContact,setAllContact] =useState([])
   const [num,setNum] = useState(0);
-  const { email } = useSelector((store) => store.userLogin);
+  const {email}  = useSelector((store) => store.userLogin);
   const addContact = async () => {
+    console.log(email)
     if (!name || !contactemail || !address || !contact) {
         return alert("Please fill all the details");
     }
-    let response = await axios.post("http://localhost:8080/contact", {
+    let response = await axios.post("http://localhost:8765/contact", {
       u_email: "Rakesh@gmail.com",
       name: name,
       email: contactemail,
@@ -52,7 +55,7 @@ const Contact = () => {
   };
   const getContact = async()=>{
     try {
-            let res = await axios.get(`http://localhost:8080/contact?user_email=Rakesh@gmail.com`)
+            let res = await axios.get(`http://localhost:8765/contact?user_email=Rakesh@gmail.com`)
             
             setAllContact(res.data)
     } catch (error) {
@@ -63,11 +66,13 @@ const Contact = () => {
     getContact()
   },[num])
   return (
-    <>
-      <Flex
+   
+    <Box py={15} w="100%">
+       <SidebarWithHeader/>
+      <Flex w = "100%"
         minH={"100vh"}
-        align={"center"}
-        justify={"center"}
+        align={"right"}
+        justify={"right"}
         bg={useColorModeValue("gray.50", "gray.800")}
       >
         <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
@@ -153,7 +158,7 @@ const Contact = () => {
         </Stack>
       </Flex>
       <ShowContact data = {allContact}/>
-    </>
+    </Box>
   );
 };
 
