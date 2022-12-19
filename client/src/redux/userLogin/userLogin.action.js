@@ -9,7 +9,7 @@ export const userLogin = (cred) => (dispatch) => {
     console.log(cred)
     let res = axios.post(`${mainUrl}/users/login`, cred)
         .then((res) => {
-            // console.log("token", res.data)
+            // console.log("token", res.data,res.data.email)
             dispatch({ type: USER_LOGIN, payload:{token: res.data.token,name:res.data.user,email:res.data.email }});
         })
         .catch(() => {

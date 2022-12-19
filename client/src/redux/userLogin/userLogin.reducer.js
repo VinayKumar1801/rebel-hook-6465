@@ -16,7 +16,7 @@ export const userLoginReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 isAuth: true,
-                token: payload,
+                token: payload.token,
                 isError: false,
                 email:payload.email
 

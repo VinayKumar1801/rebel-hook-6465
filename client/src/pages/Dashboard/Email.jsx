@@ -31,7 +31,8 @@ export default function Email() {
   const [subject,setSubject] = useState("")
   const [body,setBody] = useState("")
 
-  const { email } = useSelector((store) => store.userLogin);
+  const {email} = useSelector((store) => store.userLogin);
+ console.log(email)
   
   const handlesendEmail=async()=>{
     let obj={body,subject,selectedUsers,email};
@@ -70,17 +71,23 @@ export default function Email() {
   }
   const getContact = async()=>{
     try {
-            let res = await axios.get(`http://localhost:8765/contact?user_email=${email}`)
+            let res = await axios.get(`http://localhost:8765/contact?user_email=Rakesh@gmail.com`)
             console.log(res.data)
             setAllContact(res.data)
     } catch (error) {
         console.log(error.message)
     }
   }
+
+
+ 
   useEffect(()=>{
     getContact()
   },[])
   return (
+<>
+
+    
     <Flex 
       minH={'100vh'}
       align={'center'}
@@ -203,6 +210,7 @@ export default function Email() {
             Send Email
           </Button>
     </Flex>
+    </>
   );
 }
 

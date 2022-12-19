@@ -7,11 +7,11 @@ const ShowContact = ({ data }) => {
     <>
       <Stack
         width={{
-          base: "100%",
-          md: "100%",
+          base: "80%",
+          md: "80%",
         }}
         mb="50px"
-        textAlign={"center"}
+        textAlign={"right"}
       >
         <Heading size={"lg"} textAlign={"center"}>
           Your All <Text color="purple.400">Contact Details</Text>
@@ -24,9 +24,9 @@ const ShowContact = ({ data }) => {
           py={3}
           justifyContent={{
             base: "flex-start",
-            md: "space-around",
+            md: "flex-end",
           }}
-          w="100%"
+          w="90%"
           direction={{
             base: "column",
             md: "row",

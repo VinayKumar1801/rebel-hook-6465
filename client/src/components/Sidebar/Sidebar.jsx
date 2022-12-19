@@ -40,13 +40,13 @@ import { useDispatch } from "react-redux";
 import { Link as Linking } from "react-router-dom";
 
 const LinkItems = [
-  { name: "Home", icon: FiHome },
+  { name: "Home", icon: FiHome,link:"/dashboard/email" },
   { name: "Campaigns", icon: MdOutlineCampaign },
   { name: "Audience", icon: BsPeople },
   { name: "Automations", icon: FiStar },
   { name: "Analytics", icon: FiTrendingUp },
   { name: "Websites", icon: CgWebsite },
-  { name: "Content", icon: MdContentCopy },
+  { name: "Contact", icon: MdContentCopy,link:"/contact" },
   { name: "Integrations", icon: GrIntegration },
   { name: "Help", icon: FiHelpCircle },
   { name: "Search", icon: BsSearch },
@@ -56,7 +56,7 @@ export default function SidebarWithHeader({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
+    <Box  bg={useColorModeValue("gray.100", "gray.900")}>
       <SidebarContent
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
@@ -103,7 +103,9 @@ const SidebarContent = ({ onClose, ...rest }) => {
       </Flex>
       {LinkItems.map((link) => (
         <NavItem key={link.name} icon={link.icon}>
+          <Linking to={link?.link||""}>
           {link.name}
+          </Linking>
         </NavItem>
       ))}
     </Box>
