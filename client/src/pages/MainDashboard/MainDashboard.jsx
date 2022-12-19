@@ -6,7 +6,7 @@ import {Navigate} from "react-router-dom"
 const MainDashboard = () => {
   const { isAuth } = useSelector((store) => store.userLogin);
     if(!isAuth){
-        return <Navigate to ="/login"/>
+        return <Navigate to ="/"/>
     }
   return (
     <div>

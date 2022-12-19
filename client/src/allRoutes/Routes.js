@@ -8,6 +8,7 @@ import Signup from '../pages/signup/Signup'
 import Checkout from '../pages/Checkout/Checkout'
 import Pricing from '../pages/Pricing'
 import MainHome from '../components/Home/MainHome'
+import PageNotFound from '../pages/PageNotFound'
 const Routers = () => {
   return (
     <>
@@ -19,6 +20,8 @@ const Routers = () => {
     <Route path='/pricing' element={<Pricing/>}></Route>
     <Route path ='/dashboard' element={<MainDashboard/>} ></Route>
     <Route path='/checkout' element={<Checkout/>}></Route>
+    <Route path='*' element={<PageNotFound/>}></Route>
+
    </Routes>
    </>
   )
