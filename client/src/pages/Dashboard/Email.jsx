@@ -31,8 +31,9 @@ export default function Email() {
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
 
-  const { email } = useSelector((store) => store.userLogin);
-  // console.log(email);
+  const { email: userEmail } = useSelector((store) => store.userLogin);
+  const userData = JSON.parse(localStorage.getItem("userToken"));
+  const email = userEmail || userData.email;
 
   const handlesendEmail = async () => {
     let obj = { body, subject, selectedUsers, email };
@@ -72,7 +73,7 @@ export default function Email() {
   };
   const getContact = async () => {
     try {
-      let res = await axios.get(`${url}/contact?user_email=Rakesh@gmail.com`);
+      let res = await axios.get(`${url}/contact?user_email=${email}`);
       console.log(res.data);
       setAllContact(res.data);
     } catch (error) {

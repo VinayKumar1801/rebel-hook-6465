@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import {
@@ -17,23 +17,27 @@ import {
 import axios from "axios";
 import ShowContact from "./ShowContact";
 import SidebarWithHeader from "../../components/Sidebar/Sidebar";
-const url = process.env.REACT_APP_MAIN_URL 
+import { Link } from "react-router-dom";
+const url = process.env.REACT_APP_MAIN_URL;
 
 const Contact = () => {
   const [name, setName] = useState(null);
   const [contactemail, setContactEmail] = useState(null);
   const [address, setAddress] = useState(null);
   const [contact, setContact] = useState(null);
-  const [allContact,setAllContact] =useState([])
-  const [num,setNum] = useState(0);
-  const {email}  = useSelector((store) => store.userLogin);
+  const [allContact, setAllContact] = useState([]);
+  const [num, setNum] = useState(0);
+  const { email: userEmail } = useSelector((store) => store.userLogin);
+  const userData = JSON.parse(localStorage.getItem("userToken"));
+  const email = userEmail || userData.email;
+
   const addContact = async () => {
-    console.log(email)
+    console.log(email);
     if (!name || !contactemail || !address || !contact) {
-        return alert("Please fill all the details");
+      return alert("Please fill all the details");
     }
     let response = await axios.post(`${url}/contact`, {
-      u_email: "Rakesh@gmail.com",
+      u_email: email,
       name: name,
       email: contactemail,
       address: address,
@@ -43,7 +47,7 @@ const Contact = () => {
       alert(`contact already exist`);
     } else {
       alert("Contact Added Successfully");
-      setNum((prev)=>prev+1)
+      setNum((prev) => prev + 1);
       console.log(response);
     }
     setName("");
@@ -53,23 +57,23 @@ const Contact = () => {
 
     // console.log(name,contactemail,address,contact,email)
   };
-  const getContact = async()=>{
+  const getContact = async () => {
     try {
-            let res = await axios.get(`${url}/contact?user_email=Rakesh@gmail.com`)
-            
-            setAllContact(res.data)
+      let res = await axios.get(`${url}/contact?user_email=${email}`);
+
+      setAllContact(res.data);
     } catch (error) {
-        console.log(error.message)
+      console.log(error.message);
     }
-  }
-  useEffect(()=>{
-    getContact()
-  },[num])
+  };
+  useEffect(() => {
+    getContact();
+  }, [num]);
   return (
-   
     <Box py={15} w="100%">
-       <SidebarWithHeader/>
-      <Flex w = "100%"
+      <SidebarWithHeader />
+      <Flex
+        w="100%"
         minH={"100vh"}
         align={"right"}
         justify={"right"}
@@ -139,25 +143,41 @@ const Contact = () => {
               </FormControl>
 
               <Stack spacing={10} pt={2}>
-                <Button
-                  loadingText="Submitting"
-                  size="lg"
-                  bg={"blue.400"}
-                  color={"white"}
-                  _hover={{
-                    bg: "blue.500",
-                  }}
-                  onClick={() => addContact()}
-                 
-                >
-                  Add Contact
-                </Button>
+                <Box w="full">
+                  <Button
+                    w="full"
+                    loadingText="Submitting"
+                    size="lg"
+                    bg={"blue.400"}
+                    color={"white"}
+                    _hover={{
+                      bg: "blue.500",
+                    }}
+                    onClick={() => addContact()}
+                  >
+                    Add Contact
+                  </Button>
+                </Box>
+                <Box w="full">
+                  <Link to="/dashboard">
+                    <Button
+                      w="full"
+                      loadingText="Submitting"
+                      size="lg"
+                      bg={"yellow"}
+                      color={"blackAlpha.800"}
+                      _hover={{ bg: "#ffff43" }}
+                    >
+                      Go to Dashboard
+                    </Button>
+                  </Link>
+                </Box>
               </Stack>
             </Stack>
           </Box>
         </Stack>
       </Flex>
-      <ShowContact data = {allContact}/>
+      <ShowContact data={allContact} />
     </Box>
   );
 };
