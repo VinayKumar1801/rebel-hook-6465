@@ -97,22 +97,20 @@ export default function Navbar() {
               {isAuth ? "Logout" : "Login"}
             </Button>
           </Linking>
-          {!isAuth && (
-            <Linking to="/signup">
-              <Button
-                display={{ base: "inline-flex", md: "inline-flex" }}
-                fontSize={"sm"}
-                borderRadius="50px"
-                border="1px solid"
-                fontWeight={600}
-                color={"black"}
-                bg={"yellow"}
-                href={"#"}
-              >
-                Sign Up
-              </Button>
-            </Linking>
-          )}
+          <Linking to={isAuth ? "/dashboard" : "/signup"}>
+            <Button
+              display={{ base: "inline-flex", md: "inline-flex" }}
+              fontSize={"sm"}
+              borderRadius="50px"
+              border="1px solid"
+              fontWeight={600}
+              color={"black"}
+              bg={"yellow"}
+              href={"#"}
+            >
+              {isAuth ? "Dashboard" : " Sign Up"}
+            </Button>
+          </Linking>
           !
         </Stack>
       </Flex>
