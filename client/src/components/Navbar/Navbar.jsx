@@ -20,13 +20,6 @@ import {
 import { RxHamburgerMenu } from "react-icons/rx";
 import { GrClose } from "react-icons/gr";
 
-// import {
-//   HamburgerIcon,
-//   CloseIcon,
-//   ChevronDownIcon,
-//   ChevronRightIcon,
-// } from '@chakra-ui/icons';
-import logo from "../../assets/logo.png";
 
 import Logo from "../../assets/logo.png";
 import { Link as Linking } from "react-router-dom";

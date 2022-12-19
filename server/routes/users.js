@@ -42,12 +42,14 @@ router.post("/login", async (req, res) => {
   const { email, password } = req.body;
  
           const user = await UserModel.findOne({ email });
-          if (await argon2.verify(user.password, password)) {
+          if(user){
+            if (await argon2.verify(user.password, password)) {
               const token = JWT.sign({ id: user._id, name: user.name}, SECRETKEY, { expiresIn: "7 days" });
               const refreshToken = JWT.sign({ id: user._id, name: user.name }, REFRESHKEY, { expiresIn: "28 days" })
               return res.status(200).send({ message: "Login successfully", token, refreshToken,user:user.name,email:user.email })
+            }
           }
-          return res.status(401).send("Invalid Credentials")
+          return res.status(401).send("Invalid Credentials or User is not register")
           
 
 })
