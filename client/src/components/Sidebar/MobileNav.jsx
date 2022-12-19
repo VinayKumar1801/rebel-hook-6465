@@ -26,7 +26,9 @@ export default function MobileNav({ onOpen, ...rest }) {
   const handleSubmit = () => {
     dispatch(userLogout());
   };
-  const name = JSON.parse(localStorage.getItem("userToken"));
+  const userData = JSON.parse(localStorage.getItem("userToken"));
+  const name = userData?.name;
+
   return (
     <Flex
       // position="fixed"
@@ -78,7 +80,7 @@ export default function MobileNav({ onOpen, ...rest }) {
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">{name.name.toUpperCase()}</Text>
+                  <Text fontSize="sm">{name.toUpperCase()}</Text>
                 </VStack>
                 <Box display={{ base: "none", md: "flex" }}>
                   <FiChevronDown />
