@@ -4,7 +4,8 @@ const userToken = localStorage.getItem("userToken")
 const initialState = {
     isAuth: !!userToken,
     token: userToken || "",
-    isError: false
+    isError: false,
+    email:null
 }
 
 export const userLoginReducer = (state = initialState, { type, payload }) => {
@@ -15,8 +16,10 @@ export const userLoginReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 isAuth: true,
-                token: payload,
-                isError: false
+                token: payload.token,
+                isError: false,
+                email:payload.email
+
             }
         }
 
