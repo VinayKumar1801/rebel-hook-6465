@@ -8,7 +8,6 @@ import {
 } from "@chakra-ui/react";
 import SidebarContent from "./SidebarContent";
 import MobileNav from "./MobileNav";
-import Email from "../../pages/Dashboard/Email";
 
 export default function SidebarWithHeader({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -17,7 +16,7 @@ export default function SidebarWithHeader({ children }) {
     <Box bg={useColorModeValue("gray.100", "gray.900")}>
       <SidebarContent
         onClose={() => onClose}
-        display={{ base: "none", md: "block" }}
+        display={{ base: "none", md: "none",lg:"block" }}
       />
       <Drawer
         autoFocus={false}

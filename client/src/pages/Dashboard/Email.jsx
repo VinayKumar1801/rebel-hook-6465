@@ -17,6 +17,7 @@ import {
   Td,
   TableContainer,
   Checkbox,
+  Box,
 } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
@@ -37,7 +38,7 @@ export default function Email() {
 
   const handlesendEmail = async () => {
     let obj = { body, subject, selectedUsers, email };
-    if (!subject || !body || selectedUsers.length == 0) {
+    if (!subject || !body || selectedUsers.length === 0) {
       return toast({
         title: "Something went Wrong",
         description: "Please fill all the details and select minimum one user",
@@ -62,9 +63,9 @@ export default function Email() {
   };
   const handleChange = ({ value, checked }) => {
     console.log(value, checked);
-    if (checked == false && selectedUsers.includes(value)) {
+    if (checked === false && selectedUsers.includes(value)) {
       selectedUsers = selectedUsers.filter((el) => {
-        return el != value;
+        return el !== value;
       });
     } else {
       selectedUsers.push(value);
@@ -85,22 +86,24 @@ export default function Email() {
     getContact();
   }, []);
   return (
-    <>
+    <Box >
       <Flex
+      // border="1px solid green"
+      w={{base:"100%",lg:"80%"}}
+      marginLeft="auto"
         minH={"100vh"}
         align={"center"}
         justify={"center"}
         py={12}
         gap={20}
         direction={"column"}
-        bg={useColorModeValue("gray.50", "gray.800")}
       >
         <Stack
-          w="60%"
+        // border="1px solid green"
+          w={{base:"90%",sm:"80%",md:"80%",lg:""}}
           boxShadow={"2xl"}
-          bg={useColorModeValue("white", "gray.700")}
           rounded={"xl"}
-          p={10}
+          p={{base:"5",sm:"7",md:"9",lg:"10"}}
           spacing={8}
           align={"center"}
         >
@@ -113,10 +116,10 @@ export default function Email() {
               fontSize={"3xl"}
               color={useColorModeValue("gray.800", "gray.200")}
             >
-              Subscribe
+              Emailomatic
             </Heading>
             <Text fontSize={"lg"} color={"gray.500"}>
-              Subscribe to our newsletter & stay up to date!
+              Great platform to connect and send multiply email to your close one.
             </Text>
           </Stack>
 
@@ -162,17 +165,18 @@ export default function Email() {
         {/* --------------------Email selection Container------------------------------------- */}
 
         <Stack
-          w="60%"
+          w={{base:"90%",sm:"80%",md:"80%",lg:""}}
           boxShadow={"2xl"}
           bg={useColorModeValue("white", "gray.700")}
           rounded={"xl"}
-          p={10}
+          p={{base:"5",sm:"7",md:"9",lg:"10"}}
           spacing={8}
           align={"center"}
         >
           <Heading
             textTransform={"uppercase"}
-            fontSize={"3xl"}
+            textAlign="center"
+            fontSize={{base:"20px",sm:"",md:"",lg:""}}
             color={useColorModeValue("gray.800", "gray.200")}
           >
             Select Users To Send Email
@@ -216,7 +220,7 @@ export default function Email() {
           Send Email
         </Button>
       </Flex>
-    </>
+    </Box>
   );
 }
 

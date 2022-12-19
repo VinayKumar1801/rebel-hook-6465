@@ -43,11 +43,11 @@ export default function MobileNav({ onOpen, ...rest }) {
       // bg={useColorModeValue("white", "gray.900")}
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue("gray.200", "gray.700")}
-      justifyContent={{ base: "space-between", md: "flex-end" }}
+      justifyContent={{ base: "space-between", md: "space-between",lg:"flex-end" }}
       {...rest}
     >
       <IconButton
-        display={{ base: "flex", md: "none" }}
+        display={{ base: "flex", md: "flex",lg:"none" }}
         onClick={onOpen}
         variant="outline"
         aria-label="open menu"
@@ -55,7 +55,7 @@ export default function MobileNav({ onOpen, ...rest }) {
       />
 
       <Text
-        display={{ base: "flex", md: "none" }}
+        display={{ base: "flex", md: "flex" ,lg:"none"}}
         fontSize="2xl"
         fontFamily="monospace"
         fontWeight="bold"

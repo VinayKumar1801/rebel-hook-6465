@@ -7,7 +7,6 @@ import {
   FormControl,
   FormLabel,
   Input,
-  HStack,
   Stack,
   Button,
   Heading,
@@ -43,7 +42,7 @@ const Contact = () => {
       address: address,
       contact: contact,
     });
-    if (response.data.msg == `Contact Already Exist`) {
+    if (response.data.msg === `Contact Already Exist`) {
       alert(`contact already exist`);
     } else {
       alert("Contact Added Successfully");
@@ -73,54 +72,60 @@ const Contact = () => {
     <Box py={15} w="100%">
       <SidebarWithHeader />
       <Flex
-        w="100%"
+        w={{ base: "100%", lg: "80%" }}
+        marginLeft="auto"
         minH={"100vh"}
         align={"right"}
         justify={"right"}
-        bg={useColorModeValue("gray.50", "gray.800")}
       >
-        <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+        <Stack spacing={8} mx={"auto"} py={12} px={6}>
           <Stack align={"center"}>
             <Heading fontSize={"4xl"} textAlign={"center"}>
-              User Detail
+              User Detail Form
             </Heading>
             <Text fontSize={"lg"} color={"gray.600"}>
-              to enjoy all of our cool features ✌️
+              Add your All close Contacts here 👇
             </Text>
           </Stack>
+
           <Box
+            // border="1px solid"
             rounded={"lg"}
             bg={useColorModeValue("white", "gray.700")}
             boxShadow={"lg"}
-            p={8}
+            p={{ base: "5", sm: "7", md: "9", lg: "10" }}
           >
-            <Stack spacing={4}>
-              <HStack>
-                <Box>
-                  <FormControl id="name" isRequired>
-                    <FormLabel>Name</FormLabel>
-                    <Input
-                      type="text"
-                      value={name}
-                      onChange={(e) => {
-                        setName(e.target.value);
-                      }}
-                    />
-                  </FormControl>
-                </Box>
-                <Box>
-                  <FormControl id="contact" isRequired>
-                    <FormLabel>Contact</FormLabel>
-                    <Input
-                      type="number"
-                      value={contact}
-                      onChange={(e) => {
-                        setContact(e.target.value);
-                      }}
-                    />
-                  </FormControl>
-                </Box>
-              </HStack>
+            <Stack
+              spacing={4}
+              // border="1px solid blue"
+              w={{ base: "", sm: "350px", md: "500px", lg: "500px" }}
+            >
+              {/* <HStack> */}
+              <Box>
+                <FormControl id="name" isRequired>
+                  <FormLabel>Name</FormLabel>
+                  <Input
+                    type="text"
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
+                  />
+                </FormControl>
+              </Box>
+              <Box>
+                <FormControl id="contact" isRequired>
+                  <FormLabel>Contact</FormLabel>
+                  <Input
+                    type="number"
+                    value={contact}
+                    onChange={(e) => {
+                      setContact(e.target.value);
+                    }}
+                  />
+                </FormControl>
+              </Box>
+              {/* </HStack> */}
               <FormControl id="email" isRequired>
                 <FormLabel>Email address</FormLabel>
                 <Input

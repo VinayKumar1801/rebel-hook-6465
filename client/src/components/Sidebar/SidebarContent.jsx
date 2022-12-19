@@ -15,7 +15,6 @@ import { BsPeople, BsSearch } from "react-icons/bs";
 import { CgWebsite } from "react-icons/cg";
 import { GrIntegration } from "react-icons/gr";
 import NavItem from "./NavItem";
-import Email from "../../pages/Dashboard/Email";
 
 const LinkItems = [
   { name: "Home", icon: FiHome, link: "#Home" },
@@ -46,11 +45,11 @@ export default function SidebarContent({ onClose, ...rest }) {
         <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
           <Linking to="/">
             <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-              <Image width={"75%"} src={Logo} />
+              <Image width={{base:"150px",sm:"150px",md:"200px",lg:""}} src={Logo} />
             </Text>
           </Linking>
           <CloseButton
-            display={{ base: "flex", md: "none" }}
+            display={{ base: "flex", md: "flex",lg:"none" }}
             onClick={onClose}
           />
         </Flex>
