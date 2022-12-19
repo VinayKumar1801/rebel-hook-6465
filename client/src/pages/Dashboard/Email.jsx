@@ -23,6 +23,7 @@ import { useToast } from '@chakra-ui/react'
 import { useSelector } from "react-redux";
 import {useState,useEffect} from "react";
 import axios from "axios";
+const url = process.env.REACT_APP_MAIN_URL 
 
 export default function Email() {
   const toast = useToast()
@@ -47,7 +48,7 @@ export default function Email() {
          
     }
     try {
-        let res = await axios.post("http://localhost:8765/email",obj)
+        let res = await axios.post(`${url}/email`,obj)
         console.log(res)
         // if(res.message=="Email sent succesfully"){
 
@@ -71,7 +72,7 @@ export default function Email() {
   }
   const getContact = async()=>{
     try {
-            let res = await axios.get(`http://localhost:8765/contact?user_email=Rakesh@gmail.com`)
+            let res = await axios.get(`${url}/contact?user_email=Rakesh@gmail.com`)
             console.log(res.data)
             setAllContact(res.data)
     } catch (error) {

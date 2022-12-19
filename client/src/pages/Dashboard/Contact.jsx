@@ -17,7 +17,7 @@ import {
 import axios from "axios";
 import ShowContact from "./ShowContact";
 import SidebarWithHeader from "../../components/Sidebar/Sidebar";
-
+const url = process.env.REACT_APP_MAIN_URL 
 
 const Contact = () => {
   const [name, setName] = useState(null);
@@ -32,7 +32,7 @@ const Contact = () => {
     if (!name || !contactemail || !address || !contact) {
         return alert("Please fill all the details");
     }
-    let response = await axios.post("http://localhost:8765/contact", {
+    let response = await axios.post(`${url}/contact`, {
       u_email: "Rakesh@gmail.com",
       name: name,
       email: contactemail,
@@ -55,7 +55,7 @@ const Contact = () => {
   };
   const getContact = async()=>{
     try {
-            let res = await axios.get(`http://localhost:8765/contact?user_email=Rakesh@gmail.com`)
+            let res = await axios.get(`${url}/contact?user_email=Rakesh@gmail.com`)
             
             setAllContact(res.data)
     } catch (error) {
