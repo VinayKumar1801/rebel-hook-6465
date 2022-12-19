@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Button, Heading, Stack, Text } from "@chakra-ui/react";
 import { FaCheckCircle } from "react-icons/fa";
 const ShowContact = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <Stack
@@ -37,7 +37,7 @@ const ShowContact = ({ data }) => {
             Name
           </Heading>
 
-          <Heading size={"sm"}  w="25%">
+          <Heading size={"sm"} w="25%">
             Email Id
           </Heading>
           <Heading size={"sm"} w="25%">
@@ -48,7 +48,7 @@ const ShowContact = ({ data }) => {
           </Heading>
         </Stack>
         {data.length &&
-          data.map((el) => (
+          data.map((el, i) => (
             <Stack
               border="1px solid grey"
               p={3}
@@ -63,6 +63,7 @@ const ShowContact = ({ data }) => {
                 md: "row",
               }}
               alignItems={{ md: "center" }}
+              key={i}
             >
               <Heading size={"sm"} w="25%">
                 {el.c_name}
