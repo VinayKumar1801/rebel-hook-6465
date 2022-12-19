@@ -1,6 +1,6 @@
 # Emailomatic
 
-## COllaborators
+## Collaborators
 
 1. [Vinay Kumar](https://github.com/VinayKumar1801)
 2. [Shreedhar Hegde](https://github.com/shreedharhegde99)
@@ -17,3 +17,6 @@
 - MongoDB
 - Redux
 - JWT token
+
+## About Website
+Grow your business on your terms with Electromatic's All-In-One marketing, automation & email marketing platform.
