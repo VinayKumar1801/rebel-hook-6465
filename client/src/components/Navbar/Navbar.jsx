@@ -20,14 +20,22 @@ import {
 import { RxHamburgerMenu } from "react-icons/rx";
 import { GrClose } from "react-icons/gr";
 
-
 import Logo from "../../assets/logo.png";
 import { Link as Linking } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogout } from "../../redux/userLogin/userLogin.action";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const { isAuth } = useSelector((state) => state.userLogin);
+  const dispatch = useDispatch();
+  const handleAuth = () => {
+    if (isAuth) {
+      dispatch(userLogout());
+      return;
+    }
+  };
+
   return (
     <Box>
       <Flex
@@ -76,9 +84,8 @@ export default function Navbar() {
           direction={"row"}
           spacing={4}
         >
-          <Linking to="/login">
+          <Linking to={isAuth ? "/" : "/login"}>
             <Button
-              //   as={'a'}
               border="1px solid"
               borderRadius="50px"
               fontSize={"sm"}
@@ -86,6 +93,7 @@ export default function Navbar() {
               color={"black"}
               href={"#"}
               display={{ base: "none", sm: "flex", md: "", lg: "" }}
+              onClick={handleAuth}
             >
               {isAuth ? "Logout" : "Login"}
             </Button>
