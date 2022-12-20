@@ -19,18 +19,33 @@
 - JWT token
 
 ## About Website
+
 Grow your business on your terms with Electromatic's All-In-One marketing, automation & email marketing platform.
 
-
 ## Home Page
-![image](https://i.postimg.cc/43n39f88/Screenshot-2022-12-19-134241.jpg)
 
-## Pricing Page
-![image](https://i.postimg.cc/kgrr24h8/Screenshot-2022-12-20-124901.jpg)
+![Homepage](assets/home.png)
 
 ## Signup Page
-![image](https://i.postimg.cc/rmys7g18/Screenshot-2022-12-20-125213.jpg)
+
+![Signup page](assets/signup.png)
 
 ## Login Page
-![image](https://i.postimg.cc/m2jXsrWB/Screenshot-2022-12-20-125110.jpg)
 
+![Login page](assets/login.png)
+
+## Dashboard
+
+![Dashboard](assets/dashboard.png)
+
+## Add Contacts
+
+![Add Contacts](assets/contact.png)
+
+## Pricing Page
+
+![Pricing](assets/pricing.png)
+
+## Checkout Page
+
+![Checkout](assets/checkout.png)
